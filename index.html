@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Heavy Vehicle Calc.</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class=" header">계산시트 작성중에 있습니다.</div>
+
+    <!-- 왼쪽 입력 창 -->
+    <div class="box1">
+
+      <h1>Heavy Vehicle Calculation</h1>
+      <!-- 장비재원 선택하기 -->
+      <div class="content">
+        <div class="custom-select"  style="width:150px;">
+          <select>
+            <option value="0">장비선택</option>
+            <option value="1">B/H03 DX60</option>
+            <option value="2">B/06 DX140</option>
+            <option value="3">B/08 DX240</option>
+            <option value="direct">장비 직접입력</option>
+          </select>
+        </div>
+        
+        <div style="float: left;">
+          <input type="text" id="selboxDirect" name="selboxDirect"/>
+        </div>
+      </div>
+      <div class="content">
+        
+
+        
+        <!-- //상단의 select box에서 '직접입력'을 선택하면 나타날 인풋박스-->
+
+
+        <div class="input">
+            <label for="height">Age</label>
+            <input type="text" class="text-input" id="age" autocomplete="off" required/>
+        </div>
+
+        <div class="gender">
+
+            <label class="container">
+                <input type="radio" name="radio" id="m"><p>옵션1</p>
+                <span class="checkmark"></span>
+            </label>
+
+
+            <label class="container">
+                <input type="radio" name="radio" id="f"><p>옵션2</p>
+                  <span class="checkmark"></span>
+            </label>
+
+        </div>
+
+        <div class="containerHW">
+          <div class="inputH">
+            <label for="height">Height(cm)</label>
+            <input type="number" id="height" required>
+          </div>
+
+          <div class="inputW">
+            <label for="weight">Weight(kg)</label>
+            <input type="number" id="weight" required>
+          </div>
+        </div>
+
+        <button class="calculate" id="submit" onclick="calculate();">Calculate 장비하중</button>
+      </div>
+
+    </div>
+
+    <!-- 오른쪽 결과 창-->
+    <div class="box2">
+
+      <h1>Heavy Vehicle Calculation</h1>
+
+      <h1>
+        <math>
+        <mrow>
+          <mi>x</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mrow>
+                <mo>-</mo>
+                <mi>s</mi><mi>i</mi><mi>n</mi><mn>·</mn><mi>𝜙</mi>
+              </mrow>
+              <mo>&PlusMinus;</mo>
+              <msqrt>
+                <mrow>
+                  <msup>
+                    <mi>b</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mo>-</mo>
+                  <mrow>
+                    <mn class="egogo"></mn><mn>·</mn>
+                    <mo>&InvisibleTimes;</mo>
+                    <mi>a</mi><mn>·</mn>
+                    <mo>&InvisibleTimes;</mo>
+                    <mi>c</mi>
+                  </mrow>
+                </mrow>
+              </msqrt>
+            </mrow>
+            <mrow>
+              <mn class="esult"></mn>
+              <mo>&InvisibleTimes;</mo>
+              <mn>·</mn>
+              <mi>a</mi>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>
+      </h1>
+
+      <div class="content">
+        <div class="result">
+          <p>사용장비하중은 다음과 같습니다.</p>
+          <div id="result">00.00</div>
+          <p class="comment"></p>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer"><a class="footer-text" target="_blank" href="#">ㅇㄻㄴㅇㄹ</a></div>
+
+  </div>
+ 
+
+
+
+
+
+  
+ <!-- <a href="#" target="_blank" class="linkDownload">Download Source Code</a>  -->
+
+
+    
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modalText"></p>
+  </div></div>
+
+
+
+    
+<script src="script.js"></script>
+
+</body>
+</html>
