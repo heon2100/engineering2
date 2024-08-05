@@ -43,9 +43,9 @@ function countBmi(){
      }else if(25<=bmi&&bmi<=29.9){
     result = '초과 됨으로 재검토 필요1';
      }else if(30<=bmi&&bmi<=34.9){
-    result = '초과 됨으로 재검토 필요1';
+    result = '초과 됨으로 재검토 필요2';
      }else if(35<=bmi){
-    result = '초과 됨으로 재검토 필요1';
+    result = '초과 됨으로 재검토 필요3';
      }
 
 
