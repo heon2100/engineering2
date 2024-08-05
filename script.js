@@ -37,21 +37,21 @@ function countBmi(){
       
   var result = '';
   if(bmi<18.5){
-    result = 'Underweight';
+    result = '여유가 있어요';
      }else if(18.5<=bmi&&bmi<=24.9){
-    result = 'Healthy';
+    result = '적정함';
      }else if(25<=bmi&&bmi<=29.9){
-    result = 'Overweight';
+    result = '초과 됨으로 재검토 필요1';
      }else if(30<=bmi&&bmi<=34.9){
-    result = 'Obese';
+    result = '초과 됨으로 재검토 필요1';
      }else if(35<=bmi){
-    result = 'Extremely obese';
+    result = '초과 됨으로 재검토 필요1';
      }
 
 
 
 resultArea.style.display = "block";
-document.querySelector(".comment").innerHTML = `You are <span id="comment">${result}</span>`;
+document.querySelector(".comment").innerHTML = `장비하중은 <span id="comment">${result}</span>`;
 document.querySelector("#result").innerHTML = bmi.toFixed(2);
 document.querySelector(".esult").innerHTML = bmi.toFixed(2);
 document.querySelector(".egogo").innerHTML = p[0];
