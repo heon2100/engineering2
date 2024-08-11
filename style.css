@@ -54,7 +54,7 @@ mn {
   margin-left: 12px;
   margin-top: 12px;
   padding-bottom: 12px;
-  position: top;
+
   
   
 }
@@ -191,7 +191,6 @@ h1 {
 .custom-select {
   position: relative;
   font-family: Arial;
-  
 }
 
 
@@ -521,10 +520,14 @@ button.calculate:hover {
 
 
   .box1 {
-    width: 380px;
+    width: 98%;  /* originally was 380px */
+    margin-left:1%;
+    margin-right:1%;
   }
   .box2 {
-    width: 380px;
+    width: 98%;
+    margin-left:1%;
+    margin-right:1%;
   }
 
   .gender .container {
