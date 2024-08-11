@@ -19,19 +19,21 @@ function calculate(){
     modalText.innerHTML = `All fields are required!`;
 
   }else{
-    countBmi();
+    calWeight();
   }
 
 }
 
-
-function countBmi(){
+// main calculating function
+function calWeight(){
   var p = [age.value, height.value, weight.value];
   if(male.checked){
-    p.push("male");
+    p.push("Option1");
   }else if(female.checked){
-    p.push("female");
+    p.push("Option2");
   }
+  // When the user clicks on <span> (x), close the modal
+
   console.log(p)
   var bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
       
@@ -47,14 +49,15 @@ function countBmi(){
      }else if(35<=bmi){
     result = '초과 됨으로 재검토 필요3';
      }
-
+  
 
 
 resultArea.style.display = "block";
-document.querySelector(".comment").innerHTML = `장비하중은 <span id="comment">${result}</span>`;
+document.querySelector(".comment").innerHTML = `${p[0]} 장비하중은 <span id="comment">${result}</span>`;
 document.querySelector("#result").innerHTML = bmi.toFixed(2);
 document.querySelector(".esult").innerHTML = bmi.toFixed(2);
 document.querySelector(".egogo").innerHTML = p[0];
+document.querySelector(".op1").innerHTML = p[3];
 }
 
 
@@ -74,7 +77,13 @@ window.onclick = function(event) {
 
 
 
-// 선택목록 효과 ----------------------------------------------------------------
+
+
+
+
+
+
+// 드랍다운 목록선택 효과 ----------------------------------------------------------------
 var x, i, j, l, ll, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
@@ -156,3 +165,22 @@ document.addEventListener("click", closeAllSelect);
 
 
 //-------------------------------------------------------------
+
+
+
+
+// ----------------------- 추가 기능 -------------------- 이헌우 작성 - ------------
+
+
+function handleOnChange(e) {
+  // 선택된 데이터의 텍스트값 가져오기
+  const text = e.options[e.selectedIndex].text;
+  
+  console.log(e.options);
+  
+  // 선택한 텍스트 출력
+  document.getElementById('abcde').innerText
+    = text;
+}
+
+//이거 왜 안되냐
