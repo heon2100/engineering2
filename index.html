@@ -18,16 +18,19 @@
       <h1>Heavy Vehicle Calculation</h1>
       <!-- 장비재원 선택하기 -->
       <div class="content">
-        <div class="custom-select"  style="width:150px;">
-          <select>
+        <div class="custom-select"  style="width:150px;" onchange="handleOnChange(this)">
+          <select >
             <option value="0">장비선택</option>
             <option value="1">B/H03 DX60</option>
             <option value="2">B/06 DX140</option>
             <option value="3">B/08 DX240</option>
             <option value="direct">장비 직접입력</option>
           </select>
+          
         </div>
+        <div id='abcde'>ㅍㅇㅍ</div>
         
+
         <div style="float: left;">
           <input type="text" id="selboxDirect" name="selboxDirect"/>
         </div>
@@ -83,42 +86,42 @@
 
       <h1>
         <math>
-        <mrow>
-          <mi>x</mi>
-          <mo>=</mo>
-          <mfrac>
-            <mrow>
+          <mrow>
+            <mi>x</mi>
+            <mo>=</mo>
+            <mfrac>
               <mrow>
-                <mo>-</mo>
-                <mi>s</mi><mi>i</mi><mi>n</mi><mn>·</mn><mi>𝜙</mi>
-              </mrow>
-              <mo>&PlusMinus;</mo>
-              <msqrt>
                 <mrow>
-                  <msup>
-                    <mi>b</mi>
-                    <mn>2</mn>
-                  </msup>
-                  <mo>-</mo>
-                  <mrow>
-                    <mn class="egogo"></mn><mn>·</mn>
-                    <mo>&InvisibleTimes;</mo>
-                    <mi>a</mi><mn>·</mn>
-                    <mo>&InvisibleTimes;</mo>
-                    <mi>c</mi>
-                  </mrow>
+                  <mo>-</mo><mo class="op1"></mo>
+                  <mi>s</mi><mi>i</mi><mi>n</mi><mn>·</mn><mi>𝜙</mi>
                 </mrow>
-              </msqrt>
-            </mrow>
-            <mrow>
-              <mn class="esult"></mn>
-              <mo>&InvisibleTimes;</mo>
-              <mn>·</mn>
-              <mi>a</mi>
-            </mrow>
-          </mfrac>
-        </mrow>
-      </math>
+                <mo>&PlusMinus;</mo>
+                <msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>b</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>-</mo>
+                    <mrow>
+                      <mn class="egogo"></mn><mn>·</mn>
+                      <mo>&InvisibleTimes;</mo>
+                      <mi>a</mi><mn>·</mn>
+                      <mo>&InvisibleTimes;</mo>
+                      <mi>c</mi>
+                    </mrow>
+                  </mrow>
+                </msqrt>
+              </mrow>
+              <mrow>
+                <mn class="esult"></mn>
+                <mo>&InvisibleTimes;</mo>
+                <mn>·</mn>
+                <mi>a</mi>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </math>
       </h1>
 
       <div class="content">
@@ -154,7 +157,7 @@
 
 
 
-    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script.js"></script>
 
 </body>
