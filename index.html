@@ -8,41 +8,109 @@
     <title>Heavy Vehicle Calc.</title>
 </head>
 <body>
-  
-  <div class="container">
-    <div class=" header">계산시트 작성중에 있습니다.</div>
+  <div class=" header">
+    <div>
+      <h1>계산시트 작성중에 있습니다.</h1>
+    </div>
+    <div>
+      <h1>Heavy Vehicle Calculation</h1>
+    </div>
 
-    <!-- 왼쪽 입력 창 -->
+  </div>
+
+  <div class="container">
+    
+    <!-- 왼쪽 입력 창 ---------------------------------------------------------------------->
     <div class="box1">
 
-      <h1>Heavy Vehicle Calculation</h1>
+      <div class="box_title">I N P U T</div>
+      
       <!-- 장비재원 선택하기 -->
-      <div class="content">
-        <div class="custom-select"  style="width:150px;" onchange="handleOnChange(this)">
-          <select >
-            <option value="0">장비선택</option>
-            <option value="1">B/H03 DX60</option>
-            <option value="2">B/06 DX140</option>
-            <option value="3">B/08 DX240</option>
-            <option value="direct">장비 직접입력</option>
-          </select>
+      <div class="content1">
+
+        <h1>장비하중</h1>
+
+        <div class="content2">
+          <div class="content3">
+            <div class="content4">
+              <div class="custom-select"  style="width:150px;" onchange="handleOnChange(this)">
+                <select>
+                  <option value="0">장비선택</option>
+                  <option value="1">B/H03 DX60</option>
+                  <option value="2">B/06 DX140</option>
+                  <option value="3">B/08 DX240</option>
+                  <option value="direct">장비 직접입력</option>
+                </select>
+              </div>
+              <button class="apply" id="submit" onclick="calculate();">적용</button>
+            </div>
+          </div>
+          <div class="content3">
+            <div class="content4">
+              <label> 장 비 명: </label>
+              
+              <input type="text" id="selboxDirect" name="selboxDirect"/>
+              
+            </div>
+            <div class="content4">
+              <label> 장비중량(kN): </label>
+              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            </div>
+          </div>
+
+          <div class="content3">
+            <div class="content5">
+              <label> 전 폭 (m): </label>
+              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            </div>
+            <div class="content5">
+              <label> 전 고 (m): </label>
+              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            </div>
+            <div class="content5">
+              <label> 슈 폭 (m): </label>
+              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <div class="content1">
+
+        <h1>해체 잔재물</h1>
+        <div class="content2">
           
-        </div>
-        <div id='abcde'>ㅍㅇㅍ</div>
-        
+          <div class="content3">
+            <div class="content4">
+              <label> 높 이 (mm): </label>
+              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            </div>
+          </div>
 
-        <div style="float: left;">
-          <input type="text" id="selboxDirect" name="selboxDirect"/>
+          <div class="content3">
+            <div class="content4">
+              <label> 비중(kN/m<sub>3</sub>): </label>
+              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            </div>
+            <div class="content5">
+              <label> 공 극 률: </label>
+              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            </div>
+          </div>
+
         </div>
+
+
+
+
+    
+
+
       </div>
-      <div class="content">
-        
 
-        
+      <div class="content1">
         <!-- //상단의 select box에서 '직접입력'을 선택하면 나타날 인풋박스-->
 
-
-        <div class="input">
+        <div class="content2">
             <label for="height">장비명</label>
             <input type="text" class="text-input" id="age" autocomplete="off" required/>
         </div>
@@ -54,7 +122,6 @@
                 <span class="checkmark"></span>
             </label>
 
-
             <label class="container">
                 <input type="radio" name="radio" id="f"><p>옵션2</p>
                   <span class="checkmark"></span>
@@ -63,6 +130,7 @@
         </div>
 
         <div class="containerHW">
+
           <div class="inputH">
             <label for="height">Height(cm)</label>
             <input type="number" id="height" required>
@@ -72,6 +140,7 @@
             <label for="weight">Weight(kg)</label>
             <input type="number" id="weight" required>
           </div>
+
         </div>
 
         <button class="calculate" id="submit" onclick="calculate();">Calculate 장비하중</button>
@@ -79,10 +148,21 @@
 
     </div>
 
-    <!-- 오른쪽 결과 창-->
+    <!-- 오른쪽 결과 창----------------->
     <div class="box2">
+      <div class="box_title">O U T P U T</div>
+      
 
-      <h1>Heavy Vehicle Calculation</h1>
+
+
+    </div>
+
+  </div>
+
+<!----------------------  삭제할 구간입니다  ---------------->
+  <div class="container">
+    <div class="box2">
+      <div class="box_title">O U T P U T</div>
 
       <h1>
         <math>
@@ -133,10 +213,17 @@
       </div>
 
     </div>
-    <div class="footer"><a class="footer-text" target="_blank" href="#">ㅇㄻㄴㅇㄹ</a></div>
 
+    <div class="box3">
+      <h1>원하는 결과물</h1>
+      <img src="images/목표결과페이지.jpg">
+
+    </div>
   </div>
- 
+ <!---------------------------------------------->
+
+  <div class="footer"><a class="footer-text" target="_blank" href="#">©2022-2024 Heon, lnc</a></div>
+
 
 
 
@@ -146,16 +233,7 @@
  <!-- <a href="#" target="_blank" class="linkDownload">Download Source Code</a>  -->
 
 
-    
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p id="modalText"></p>
-  </div></div>
-
-
+   
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script.js"></script>
