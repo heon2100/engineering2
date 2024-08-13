@@ -1,6 +1,50 @@
 /* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+
+.box_title {
+  display: block;
+  color: var(--text-color-b);
+  font-weight: bold;
+  font-size: 30px;
+  padding: 15px 0;
+  text-align:center;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+
+
+
+
+/* 계산식 값 ------*/
+mn {
+  font-family: "Cambria Math";
+}
+
+
+/* ---------- Color Control Here -----------*/
+:root {
+  --color1:#43640b;
+  --color2:#80a71a;
+  --color3:#afca54;
+  --color4:#d3dcc8;
+  --color5:#a4bfd1;
+  --text-color-b:rgba(40, 40, 40, 0.8);
+  --text-color-d:#fefefe;
+  --accent-color:rgba(255, 0, 0, 0.82);
+  --bg-color-trans:#ffffff80;
+  --shadow-color:rgba(0, 0, 0, 0.15);
+}
+/* -----------------------------------------*/
+
+
 * {
   margin: 0;
   padding: 0;
@@ -9,56 +53,67 @@
 }
 
 body {
-  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: rgb(97, 138, 254, 0.9);
+  background: var(--color5);
 }
-
-.body .container {
-  min-width: 100px;
-} 
 
 .header {
   display: flex;
-  justify-content: start;
-  align-items: center;
+  flex-direction: column;
   padding: 10px 15px;
 }
 
-mn {
-  font-family: "Cambria Math";
-}
+
+.container {
+  min-width: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+} 
+
+
 
 .box1 {
-  float: left;
   width: 500px;
-  background: #fafafa;
+  background: var(--color4);
   border-radius: 12px;
-  text-align: center;
-  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 20px 5px var(--shadow-color);
   margin-left: 12px;
   margin-top: 12px;
   padding-bottom: 12px;
-
-  
+  color:var(--text-color-b);
 }
 .box2 {
-  float: left;
   width: 500px;
-  background: #fafafa;
+  background: var(--color4);
   border-radius: 12px;
   text-align: center;
-  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 20px 5px var(--shadow-color);
   margin-left: 12px;
   margin-top: 12px;
   padding-bottom: 12px;
-
-  
-  
+  color:var(--text-color-b);
 }
-
+/* box3은 추후에 삭제---*/
+.box3 {
+  width: 500px;
+  background: var(--color4);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 2px 2px 20px 5px var(--shadow-color);
+  margin-left: 12px;
+  margin-top: 12px;
+  padding: 12px 12px;
+  color:var(--text-color-b);
+  object-fit:contain;
+}
+.box3 > img{
+  width:100%;
+  height: 100%;
+}
 
 .footer {
   display: flex;
@@ -70,7 +125,7 @@ mn {
 
 .footer-text {
   text-decoration: none;
-  color: rgba(40, 40, 40, 0.8);
+  color: var(--text-color-b);
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
   font-size: 14px;
@@ -78,87 +133,118 @@ mn {
 }
 
 .footer-text:hover {
-  color: rgba(40, 40, 40, 1);
+  color: var(--text-color-b);
 }
 
 
+/*-------------- 박스안 인풋값 컨텐츠 ---------------------*/
 
-
-h1 {
-  display: block;
-  color: rgb(0, 0, 0, 0.7);
-  font-weight: bold;
-  font-size: 30px;
-  padding: 30px 0;
-
+.content1 {
+  padding: 5px 30px;
 }
 
-
-
-.content {
-  padding: 0 30px;
-
-}
-
-.input {
-  background: #fff;
-  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  padding: 20px 0;
-  margin-bottom: 20px;
-}
-
-
-.input label {
-  display: block;
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 20px;
-}
-
-.input input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid #4f7df9;
-  width: 50%;
-  text-align: center;
-  font-size: 28px;
-  font-family: "Nunito", sans-serif;
-}
-
-
-
-.inputW {
-  background: #fff;
-  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+.content2 {
+  background: var(--bg-color-trans);
+  box-shadow: 0px 0px 95px -30px var(--shadow-color);
   border-radius: 12px;
   padding: 10px 0;
-  margin-bottom: 20px;
 }
 
-
-.inputW label {
+.content2 label {
   display: block;
   font-size: 18px;
   font-weight: 600;
-  color: #000;
+  color: var(--text-color-b);
   margin-bottom: 20px;
 }
 
-.inputW input {
+.content2 input {
   outline: none;
   border: none;
-  border-bottom: 1px solid #4f7df9;
+  border-bottom: 1px solid var(--color1);
   width: 50%;
   text-align: center;
   font-size: 28px;
   font-family: "Nunito", sans-serif;
 }
 
+.content3 {
+  display:flex;
+  padding: 10px 10px;
+
+}
+
+.content4 {
+  display:flex;
+  flex-direction: row;
+  padding-right:10px;
+}
+.content4 label {
+  display: flex;
+  align-items : center;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color-b);
+  margin-bottom: 0px;
+}
+.content4 input {
+  padding:2% 0;
+  width: 100px;
+  font-size:16px;
+}
+
+.content5 {
+  display:flex;
+  flex-direction: row;
+}
+.content5 label {
+  display: flex;
+  align-items : center;
+  margin: 0 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color-b);
+  width:80px;
+}
+.content5 input {
+  padding:2% 0;
+  width: 50px;
+  font-size:16px;
+}
+
+
+
+
+button.apply {
+  margin-left:10px;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  color: var(--text-color-d);
+  background: var(--color1);
+  font-size: 14px;
+  border-radius: 7px;
+  padding: 2% 0;
+  width: 78px;
+  height: 30px;
+  outline: none;
+  border: none;
+  transition: all 0.5s;
+}
+
+
+button.apply:hover {
+  background: var(--color2);
+}
+
+
+
+
+
+
 .inputH {
-  background: #fff;
-  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  background: var(--bg-color-trans);
+  box-shadow: 0px 0px 95px -30px var(--shadow-color);
   border-radius: 12px;
   padding: 10px 0;
   margin-bottom: 20px;
@@ -170,42 +256,133 @@ h1 {
   display: block;
   font-size: 18px;
   font-weight: 600;
-  color: #000;
+  color: var(--text-color-b);;
   margin-bottom: 20px;
 }
 
 .inputH input {
   outline: none;
   border: none;
-  border-bottom: 1px solid #4f7df9;
+  border-bottom: 1px solid var(--color2);
   width: 50%;
   text-align: center;
   font-size: 28px;
   font-family: "Nunito", sans-serif;
 }
 
-/* 선택 ---------------------------------- */
 
+
+.inputW {
+  background: var(--bg-color-trans);
+  box-shadow: 0px 0px 95px -30px var(--shadow-color);
+  border-radius: 12px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+
+.inputW label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color-b);
+  margin-bottom: 20px;
+}
+
+.inputW input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--color2);
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+button.calculate {
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  color: var(--text-color-d);
+  background: var(--color1);
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 12px 0;
+  width: 100%;
+  outline: none;
+  border: none;
+  transition: all 0.5s;
+}
+
+button.calculate:hover {
+  background: var(--color2);
+}
+
+
+
+.result {
+  padding: 10px 20px;
+}
+
+.result p {
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--text-color-b);
+  margin-bottom: 15px;
+}
+
+.result #result {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--color1);
+  background-color: var(--bg-color-trans);
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 55px;
+  margin-bottom: 25px;
+}
+
+#comment {
+  color: var(--color1);
+  font-weight: 800;
+}
+
+.comment {
+  display: none;
+  border: dashed 1px;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+
+
+/* dropdown 선택 ---------------------------------- */
 
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
-  font-family: Arial;
+  font-family:  "Nunito", sans-serif;
 }
-
-
 
 .custom-select select {
   display: none; /*hide original SELECT element:*/
 }
 
 .select-selected {
-  background-color: DodgerBlue;
-  border-radius: 10px;
+  background-color: var(--color1);;
+  border-radius: 5px;
 }
-
-
-
+.select-selected:hover {
+  background-color: var(--color2);;
+  transition: all 0.5s;
+}
 
 /*style the arrow inside the select element:*/
 .select-selected:after {
@@ -219,26 +396,22 @@ h1 {
   border-color: #fff transparent transparent transparent;
 }
 
-
-
 /*point the arrow upwards when the select box is open (active):*/
 .select-selected.select-arrow-active:after {
   border-color: transparent transparent #fff transparent;
-  
   top: 7px;
 }
 .select-selected:focus{ /*이거 왜 안먹히냐.. */
-  border: 1px solid #9B51E0;
+  border: 1px solid var(--accent-color);
   box-sizing: border-box;
   border-radius: 10px;
-  outline: 3px solid #F8E4FF;
+  outline: 3px solid var(--color4);
   border-radius: 10px;
 }
 
-
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
-  color: #ffffff;
+  color: var(--text-color-d);
   padding: 4px 12px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -250,7 +423,7 @@ h1 {
 /*목록을 확장했을 시 style items (options):*/
 .select-items {
   position: absolute;
-  background-color: DodgerBlue;
+  background-color: var(--color2);
   top: 100%;
   left: 0;
   right: 0;
@@ -263,86 +436,33 @@ h1 {
   display: none;
 }
 
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+.select-items div:hover {
+  background-color: var(--color1);
+  transition: all 0.5s;
+}
+
+.same-as-selected {
+  background-color: var(--bg-color-trans);
 }
 /*-------------------------------------------------------------*/
 
 
 
 
-
-
-
-button.calculate {
-  cursor: pointer;
-  font-family: "Nunito", sans-serif;
-  color: #fff;
-  background: rgb(97, 138, 254, 1);
-  font-size: 16px;
-  border-radius: 7px;
-  padding: 12px 0;
-  width: 100%;
-  outline: none;
-  border: none;
-  transition: all 0.5s;
-}
-
-button.calculate:hover {
-  background: #0044ff;
-}
-
-
-
-.result {
-  padding: 10px 20px;
-}
-
-.result p {
-  font-weight: 600;
-  font-size: 22px;
-  color: #000;
-  margin-bottom: 15px;
-}
-
-.result #result {
-  font-size: 36px;
-  font-weight: 900;
-  color: #4f7df9;
-  background-color: #eaeaea;
-  display: inline-block;
-  padding: 7px 20px;
-  border-radius: 55px;
-  margin-bottom: 25px;
-}
-
-#comment {
-  color: #4f7df9;
-  font-weight: 800;
-}
-
-.comment {
-  display: none;
-  border: dashed 1px;
-  border-radius: 7px;
-  padding: 5px;
-}
-
+/* Style for Radio (check box)----------------------------------*/
 
 .gender {
   display: flex;
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  background: #fff;
-  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  background: var(--bg-color-trans);
+  box-shadow: 0px 0px 95px -30px var(--shadow-color);
   border-radius: 12px;
   padding: 20px 0;
   margin-bottom: 20px;
 }
 
-
-/* Style for Radio */
 .gender .container {
   display: block;
   position: relative;
@@ -355,6 +475,7 @@ button.calculate:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color:var(--text-color-b);
 }
 
 /* Hide the browser's default radio button */
@@ -369,20 +490,20 @@ button.calculate:hover {
   position: absolute;
   top: 14%;
   left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
+  height: 20px;
+  width: 20px;
+  background-color: var(--color5);
   border-radius: 50%;
 }
 
 /* On mouse-over, add a grey background color */
 .gender .container:hover input~.checkmark {
-  background-color: #ccc;
+  background-color: var(--color5);
 }
 
 /* When the radio button is checked, add a blue background */
 .gender .container input:checked~.checkmark {
-  background-color: #2196F3;
+  background-color: var(--color1);
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -399,135 +520,51 @@ button.calculate:hover {
 
 /* Style the indicator (dot/circle) */
 .gender .container .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
+  top: 36%;
+  left: 36%;
+  width: 32%;
+  height: 32%;
   border-radius: 50%;
-  background: white;
+  background: var(--color4);
 }
 
 /* END Style for Radio */
-
 .containerHW {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+/*----------------------------------------------------------------*/
 
 
 
 
-/* The Modal (background) */
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-  padding-top: 300px;
-
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 600px;
-  border-radius: 10px;
-  box-shadow: #393c76 -1px 2px 2px 1px;
-}
-
-#modalText {
-  padding-top: 8px;
-  padding-right: 5px;
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
-  color: rgb(24, 23, 23);
-}
-
-.modal-wrong {
-  border: 2px solid red;
-}
-
-.modal-correct {
-  border: 2px solid green;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.close:hover {
-  color: #d41111;
-}
 
 
-.linkDownload {
-  position: fixed;
-  background-color: #d12322;
-  margin: 20px;
-  padding: 10px 10px;
-  left: -0px;
-  border-radius: 5px;
-  bottom: -0px;
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
-  text-decoration: none;
-  text-transform: capitalize;
-  transition: all 0.43s ease-in-out;
-
-
-}
-
-
-.linkDownload i {
-  padding-left: 7px;
-}
-
-.linkDownload:hover {
-  text-decoration: none;
-  background-color: black;
-}
-
-
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .header {
-    display: flex;
     width: 94%;
     padding: 10px 15px;
+    
   }
 
-  .box1 {
+  .box_title{
+    font-size: 6vw;
+  }
+  h1{
+    font-size: 4vw;
+  }
+
+  .box1, .box3 {
     float:none;
     width: 94%;  /* originally was 380px */
     margin-left:3%;
     margin-right:3%;
+  }
+
+  .result p {
+    font-size: 5vw;
   }
   .box2 {
     float:none;
@@ -540,19 +577,10 @@ button.calculate:hover {
     font-size: 18px;
   }
   .checkmark {
-    height: 20px;
-    width: 20px;
+    height: 16px;
+    width: 16px;
   }
-  .gender .container .checkmark:after {
-    top: 7px;
-    left: 7px;
-    width: 6px;
-    height: 6px;
-  }
-  .input label {
 
-    font-size: 18px;
-  }
 
   .inputH label,
   .inputW label {
@@ -560,18 +588,31 @@ button.calculate:hover {
   }
 
 
-  .input input,
+  .content2 input,
   .inputH input,
   .inputW input {
     font-size: 24px;
   }
 
-
-  .modal-content {
-
-    width: 380px;
+  .content3 {
+    flex-direction:column;
   }
 
+  .content4 {
+    padding-bottom: 1%;
+  }
+  .content4 label,
+  .content5 label {
+    font-size:14px;
+    width:100px;
+    margin:0 2%;
 
+  }
+  .content4 input,
+  .content5 input {
+    font-size:14px;
+    width:50%;
+  }
+  
 
 }
