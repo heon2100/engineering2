@@ -9,6 +9,7 @@
   font-size: 30px;
   padding: 15px 0;
   text-align:center;
+
 }
 
 h1 {
@@ -99,7 +100,7 @@ body {
 }
 /* box3은 추후에 삭제---*/
 .box3 {
-  width: 500px;
+  width: 600px;
   background: var(--color4);
   border-radius: 12px;
   text-align: center;
@@ -140,7 +141,7 @@ body {
 /*-------------- 박스안 인풋값 컨텐츠 ---------------------*/
 
 .content1 {
-  padding: 5px 30px;
+  padding: 5px 2% 15px 2%;
 }
 
 .content2 {
@@ -150,95 +151,52 @@ body {
   padding: 10px 0;
 }
 
-.content2 label {
-  display: block;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-color-b);
-  margin-bottom: 20px;
-}
-
-.content2 input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid var(--color1);
-  width: 50%;
-  text-align: center;
-  font-size: 28px;
-  font-family: "Nunito", sans-serif;
-}
-
 .content3 {
   display:flex;
-  padding: 10px 10px;
+  justify-content:space-between;
+  padding: 5px 10px 5px 10px;
+  width:100%;
 
 }
 
 .content4 {
+  width:250px;
   display:flex;
-  flex-direction: row;
-  padding-right:10px;
+  padding: 10px 0 10px 0;
 }
-.content4 label {
-  display: flex;
-  align-items : center;
-  margin: 0 10px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-color-b);
-  margin-bottom: 0px;
-}
-.content4 input {
-  padding:2% 0;
-  width: 100px;
-  font-size:16px;
-}
-
 .content5 {
+  width:200px;
   display:flex;
-  flex-direction: row;
+  padding: 10px 0 10px 0;
 }
-.content5 label {
-  display: flex;
-  align-items : center;
-  margin: 0 0 0 10px;
+
+.content6 {
+  width:140px;
+  display:flex;
+  padding: 10px 0 10px 0;
+}
+
+
+.item1 {
+  flex-basis:100px;
+  flex-shrink:0;
+  align-items: center;
   font-size: 16px;
-  font-weight: 600;
   color: var(--text-color-b);
-  width:80px;
-}
-.content5 input {
-  padding:2% 0;
-  width: 50px;
-  font-size:16px;
 }
 
-
-
-
-button.apply {
-  margin-left:10px;
-  cursor: pointer;
-  font-family: "Nunito", sans-serif;
-  color: var(--text-color-d);
-  background: var(--color1);
-  font-size: 14px;
-  border-radius: 7px;
-  padding: 2% 0;
-  width: 78px;
-  height: 30px;
+.item2 input {
+  flex-grow:1;
+  align-self: center;
+  width:100%;
+  height:100%;
   outline: none;
   border: none;
-  transition: all 0.5s;
+  border-bottom: 1px solid var(--color2);
+  text-align: center;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
 }
-
-
-button.apply:hover {
-  background: var(--color2);
-}
-
-
-
 
 
 
@@ -369,6 +327,7 @@ button.calculate:hover {
 .custom-select {
   position: relative;
   font-family:  "Nunito", sans-serif;
+  width:50%;
 }
 
 .custom-select select {
@@ -451,7 +410,7 @@ button.calculate:hover {
 
 /* Style for Radio (check box)----------------------------------*/
 
-.gender {
+.choices {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -459,18 +418,16 @@ button.calculate:hover {
   background: var(--bg-color-trans);
   box-shadow: 0px 0px 95px -30px var(--shadow-color);
   border-radius: 12px;
-  padding: 20px 0;
-  margin-bottom: 20px;
+  padding: 10px 0;
+  margin: 0 10px;
 }
 
-.gender .container {
+.choices .container {
   display: block;
   position: relative;
   padding-left: 35px;
-  /* margin-bottom: 12px; */
-  margin-top: 7px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 16px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -479,7 +436,7 @@ button.calculate:hover {
 }
 
 /* Hide the browser's default radio button */
-.gender .container input {
+.choices .container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -492,17 +449,17 @@ button.calculate:hover {
   left: 0;
   height: 20px;
   width: 20px;
-  background-color: var(--color5);
+  background-color: var(--color4);
   border-radius: 50%;
 }
 
 /* On mouse-over, add a grey background color */
-.gender .container:hover input~.checkmark {
+.choices .container:hover input~.checkmark {
   background-color: var(--color5);
 }
 
 /* When the radio button is checked, add a blue background */
-.gender .container input:checked~.checkmark {
+.choices .container input:checked~.checkmark {
   background-color: var(--color1);
 }
 
@@ -514,12 +471,12 @@ button.calculate:hover {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.gender .container input:checked~.checkmark:after {
+.choices .container input:checked~.checkmark:after {
   display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.gender .container .checkmark:after {
+.choices .container .checkmark:after {
   top: 36%;
   left: 36%;
   width: 32%;
@@ -573,13 +530,21 @@ button.calculate:hover {
     margin-right:3%;
   }
 
-  .gender .container {
-    font-size: 18px;
+  .custom-select {
+    width:100%;
+  }
+
+
+  .choices .container {
+    padding:0 0 0 25px;
+    font-size: 14px;
   }
   .checkmark {
     height: 16px;
     width: 16px;
   }
+
+  
 
 
   .inputH label,
@@ -591,27 +556,31 @@ button.calculate:hover {
   .content2 input,
   .inputH input,
   .inputW input {
-    font-size: 24px;
+    font-size: 14px;
   }
 
   .content3 {
     flex-direction:column;
   }
 
-  .content4 {
+  .content4, 
+  .content5,
+  .content6 {
+    width:100%;
     padding-bottom: 1%;
-  }
-  .content4 label,
-  .content5 label {
     font-size:14px;
-    width:100px;
-    margin:0 2%;
+  }
 
-  }
-  .content4 input,
-  .content5 input {
+  .item1 {
     font-size:14px;
-    width:50%;
+    flex-basis:90px;
+  }
+
+  .content4 input,
+  .content5 input,
+  .ccotent6 input {
+    font-size:14px;
+    width:100%;
   }
   
 
