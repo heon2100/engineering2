@@ -32,72 +32,90 @@
 
         <div class="content2">
           <div class="content3">
-            <div class="content4">
-              <div class="custom-select"  style="width:150px;" onchange="handleOnChange(this)">
-                <select>
-                  <option value="0">장비선택</option>
-                  <option value="1">B/H03 DX60</option>
-                  <option value="2">B/06 DX140</option>
-                  <option value="3">B/08 DX240</option>
-                  <option value="direct">장비 직접입력</option>
-                </select>
-              </div>
-              <button class="apply" id="submit" onclick="calculate();">적용</button>
+            
+            <div class="custom-select"  onchange="handleOnChange(this)">
+              <select>
+                <option value="0">장비선택</option>
+                <option value="1">B/H03 DX60</option>
+                <option value="2">B/06 DX140</option>
+                <option value="3">B/08 DX240</option>
+                <option value="direct">장비 직접입력</option>
+              </select>
             </div>
+
           </div>
           <div class="content3">
             <div class="content4">
-              <label> 장 비 명: </label>
-              
-              <input type="text" id="selboxDirect" name="selboxDirect"/>
-              
+              <div class="item1" style="letter-spacing:0.7ch;"> 장 비 명: </div>
+              <div class="item2"><input type="number" id="equipName"/></div>
             </div>
-            <div class="content4">
-              <label> 장비중량(kN): </label>
-              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            <div class="content5">
+              <div class="item1" style="letter-spacing:0ch;"> 장비중량(kN): </div>
+              <div class="item2"><input type="number" id="weight"/></div>
             </div>
           </div>
 
           <div class="content3">
             <div class="content5">
-              <label> 전 폭 (m): </label>
-              <input type="text" id="selboxDirect" name="selboxDirect"/>
+              <div class="item1" style="letter-spacing:0.29ch;"> 전 폭 (m): </div>
+              <div class="item2"><input type="number" id="selboxDirect" name="selboxDirect"/></div>
             </div>
             <div class="content5">
-              <label> 전 고 (m): </label>
-              <input type="text" id="selboxDirect" name="selboxDirect"/>
-            </div>
-            <div class="content5">
-              <label> 슈 폭 (m): </label>
-              <input type="text" id="selboxDirect" name="selboxDirect"/>
+              <div class="item1" style="letter-spacing:0.29ch;"> 전 고 (m): </div>
+              <div class="item2"><input type="number" id="selboxDirect" name="selboxDirect"/></div>
             </div>
           </div>
+
+          <div class="content3">
+            <div class="content5">
+              <div class="item1" style="letter-spacing:0.29ch;"> 슈 폭 (m): </div>
+              <div class="item2"><input type="number" id="selboxDirect" name="selboxDirect"/></div>
+            </div>
+          </div>
+          <div class="item1" style="letter-spacing:0.24ch; padding:0px 10px; font-weight:600"> 충 격 계 수 </div>
+          <div class="choices">
+            
+            <label class="container">
+                <input type="radio" name="radio" id="m"><p>기본 충격하중: 1.3</p>
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">
+                <input type="radio" name="radio" id="f"><p>제안 충격하중: 1.4</p>
+                  <span class="checkmark"></span>
+            </label>
+          </div>
+          
+
         </div>
-      </div>  
+
+      </div>  <!-- content1 끝-->
+
+
+
+
       <div class="content1">
 
         <h1>해체 잔재물</h1>
         <div class="content2">
           
           <div class="content3">
-            <div class="content4">
-              <label> 높 이 (mm): </label>
-              <input type="text" id="selboxDirect" name="selboxDirect"/>
+            <div class="content6">
+              <div class="item1" style="letter-spacing:0.2ch;"> 높 이 (m): </div>
+              <div class="item2"><input type="text" id="selboxDirect" name="selboxDirect"/></div>
+            </div>
+
+            <div class="content6">
+              <div class="item1" style="letter-spacing:-0.05ch;"> 비중(kN/m<sup>3</sup>): </div>
+              <div class="item2"><input type="text" id="selboxDirect" name="selboxDirect"/></div>
+            </div>
+            <div class="content6">
+              <div class="item1" style="letter-spacing:0.73ch;"> 공 극 률: </div>
+                <div class="item2"><input type="text" id="selboxDirect" name="selboxDirect"/></div>
             </div>
           </div>
 
-          <div class="content3">
-            <div class="content4">
-              <label> 비중(kN/m<sub>3</sub>): </label>
-              <input type="text" id="selboxDirect" name="selboxDirect"/>
-            </div>
-            <div class="content5">
-              <label> 공 극 률: </label>
-              <input type="text" id="selboxDirect" name="selboxDirect"/>
-            </div>
-          </div>
-
-        </div>
+        </div>  <!-- content1 끝-->
 
 
 
@@ -115,8 +133,7 @@
             <input type="text" class="text-input" id="age" autocomplete="off" required/>
         </div>
 
-        <div class="gender">
-
+        <div class="choices">
             <label class="container">
                 <input type="radio" name="radio" id="m"><p>옵션1</p>
                 <span class="checkmark"></span>
@@ -126,7 +143,6 @@
                 <input type="radio" name="radio" id="f"><p>옵션2</p>
                   <span class="checkmark"></span>
             </label>
-
         </div>
 
         <div class="containerHW">
