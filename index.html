@@ -51,37 +51,36 @@
             </div>
             <div class="content5">
               <div class="item1" style="letter-spacing:0ch;"> 장비중량(kN): </div>
-              <div class="item2"><input type="number" id="weight"/></div>
+              <div class="item2"><input type="number" id="equipWT"/></div>
             </div>
           </div>
 
           <div class="content3">
             <div class="content5">
-              <div class="item1" style="letter-spacing:0.29ch;"> 전 폭 (m): </div>
-              <div class="item2"><input type="number" id="selboxDirect" name="selboxDirect"/></div>
+              <div class="item1" style="letter-spacing:0.3ch;"> 전 폭 (m): </div>
+              <div class="item2"><input type="number" id="selboxDirect"/></div>
             </div>
             <div class="content5">
-              <div class="item1" style="letter-spacing:0.29ch;"> 전 고 (m): </div>
-              <div class="item2"><input type="number" id="selboxDirect" name="selboxDirect"/></div>
+              <div class="item1" style="letter-spacing:0.3ch;"> 전 고 (m): </div>
+              <div class="item2"><input type="number" id="selboxDirect"/></div>
             </div>
           </div>
 
           <div class="content3">
             <div class="content5">
-              <div class="item1" style="letter-spacing:0.29ch;"> 슈 폭 (m): </div>
-              <div class="item2"><input type="number" id="selboxDirect" name="selboxDirect"/></div>
+              <div class="item1" style="letter-spacing:0.3ch;"> 슈 폭 (m): </div>
+              <div class="item2"><input type="number" id="selboxDirect"/></div>
             </div>
           </div>
           <div class="item1" style="letter-spacing:0.24ch; padding:0px 10px; font-weight:600"> 충 격 계 수 </div>
           <div class="choices">
             
             <label class="container">
-                <input type="radio" name="radio" id="m"><p>기본 충격하중: 1.3</p>
+                <input type="radio" name="radio" id="impact1"><p> 1.3 (기본) </p>
                 <span class="checkmark"></span>
             </label>
-
             <label class="container">
-                <input type="radio" name="radio" id="f"><p>제안 충격하중: 1.4</p>
+                <input type="radio" name="radio" id="impact2"><p> 1.4 (제안)</p>
                   <span class="checkmark"></span>
             </label>
           </div>
@@ -92,24 +91,24 @@
       </div>  <!-- content1 끝-->
 
 
-
-
       <div class="content1">
 
         <h1>해체 잔재물</h1>
         <div class="content2">
           
           <div class="content3">
-            <div class="content6">
+            <div class="content5">
               <div class="item1" style="letter-spacing:0.2ch;"> 높 이 (m): </div>
               <div class="item2"><input type="text" id="selboxDirect" name="selboxDirect"/></div>
             </div>
-
-            <div class="content6">
+            <div class="content5">
               <div class="item1" style="letter-spacing:-0.05ch;"> 비중(kN/m<sup>3</sup>): </div>
               <div class="item2"><input type="text" id="selboxDirect" name="selboxDirect"/></div>
             </div>
-            <div class="content6">
+          </div>
+
+          <div class="content3">
+            <div class="content5">
               <div class="item1" style="letter-spacing:0.73ch;"> 공 극 률: </div>
                 <div class="item2"><input type="text" id="selboxDirect" name="selboxDirect"/></div>
             </div>
@@ -117,7 +116,50 @@
 
         </div>  <!-- content1 끝-->
 
+        <div class="content1">
 
+          <h1>슬래브 두께</h1>
+          <div class="content2" style="flex-direction:column;">
+            
+            <div class="content3">
+              <div class="content4" style="padding-bottom:0px;">
+                <div class="item1" style="letter-spacing:0.3ch; text-align:right;"> f<sub>ck</sub>=&nbsp;</div>
+                <div class="item2"><input type="text" id="selboxDirect"/></div>
+                <div><a>&nbsp;&nbsp;mm</a></div>
+              </div>
+            </div>
+            <div class="content3">
+              <div class="content4" style="padding-bottom:0px;">
+                <div class="item1" style="letter-spacing:0.3ch; text-align:right;"> THK. &nbsp;</div>
+                <div class="item2"><input type="text" id="selboxDirect"/></div>
+                <div><a>&nbsp;&nbsp;mm</a></div>
+              </div>
+            </div>
+            <div class="content3">
+              <div class="content4" style="padding:0px;">
+                <div class="item1" style="letter-spacing:0.3ch; text-align:right;"></div>
+                <div class="item2"><input type="text" id="selboxDirect"/></div>
+                <div><a>&nbsp;&nbsp;mm</a></div>
+              </div>
+            </div>
+            <div class="content3">
+              <div class="content4" style="padding:0px;">
+                <div class="item1" style="letter-spacing:0.3ch; text-align:right;"></div>
+                <div class="item2"><input type="text" id="selboxDirect"/></div>
+                <div><a>&nbsp;&nbsp;mm</a></div>
+              </div>
+            </div>
+            <div class="content3">
+              <div class="content4" style="padding:0px;">
+                <div class="item1" style="letter-spacing:0.3ch; text-align:right;"></div>
+                <div class="item2"><input type="text" id="selboxDirect"/></div>
+                <div><a>&nbsp;&nbsp;mm</a></div>
+              </div>
+            </div>
+            
+          </div>
+        </div>  <!-- content1 끝-->
+        
 
 
     
@@ -159,7 +201,7 @@
 
         </div>
 
-        <button class="calculate" id="submit" onclick="calculate();">Calculate 장비하중</button>
+        <button class="calculate" id="submit" onclick="inputCheck();">Calculate 장비하중</button>
       </div>
 
     </div>
@@ -238,15 +280,27 @@
   </div>
  <!---------------------------------------------->
 
+
+
+  <a href="#" target="_blank" class="linkDownload">Linky Linky</a>
+
   <div class="footer"><a class="footer-text" target="_blank" href="#">©2022-2024 Heon, lnc</a></div>
 
 
 
 
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modalText"></p>
+    </div></div>
+
+
 
   
- <!-- <a href="#" target="_blank" class="linkDownload">Download Source Code</a>  -->
 
 
    
