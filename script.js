@@ -11,33 +11,48 @@ modalText = document.querySelector("#modalText");
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
-
-function calculate(){
+// input value check ------------------
+function inputCheck(){
  
   if(age.value=='' || height.value=='' || weight.value=='' || (male.checked==false && female.checked==false)){
     modal.style.display = "block";
     modalText.innerHTML = `All fields are required!`;
 
   }else{
-    calWeight();
+    calCulate();
   }
 
 }
+//--------------------------------------------------------------
 
-// main calculating function
-function calWeight(){
-  var p = [age.value, height.value, weight.value];
+// When the user clicks on <span> (x), close the modal-----------
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+//--------------------------------------------------------------
+
+
+
+// main calculating function-----------------
+function calCulate(){
+  let p = [age.value, height.value, weight.value];
   if(male.checked){
     p.push("Option1");
   }else if(female.checked){
     p.push("Option2");
   }
-  // When the user clicks on <span> (x), close the modal
 
-  console.log(p)
-  var bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
+  console.log(2)
+  let bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
       
-  var result = '';
+  let result = '';
   if(bmi<18.5){
     result = '여유가 있어요';
      }else if(18.5<=bmi&&bmi<=24.9){
@@ -59,11 +74,6 @@ document.querySelector(".esult").innerHTML = bmi.toFixed(2);
 document.querySelector(".egogo").innerHTML = p[0];
 document.querySelector(".op1").innerHTML = p[3];
 }
-
-
-
-
-
 
 
 
@@ -152,7 +162,7 @@ then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
 
-//-------------------------------------------------------------
+//-------------------------------------------------------------------------
 
 
 
