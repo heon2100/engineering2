@@ -1,20 +1,20 @@
-var age = document.getElementById("age");
-var height = document.getElementById("height");
-var weight = document.getElementById("weight");
-var male = document.getElementById("m");
-var female = document.getElementById("f");
+var eqName = document.getElementById("eqName");
+let eqWeight = document.getElementById("eqWeight");
+let eqWidth = document.getElementById("eqWidth");
+let impact1 = document.getElementById("impact1");
+let impact2 = document.getElementById("impact2");
 var form = document.getElementById("form");
 let resultArea = document.querySelector(".comment");
 
-modalContent = document.querySelector(".modal-content");
-modalText = document.querySelector("#modalText");
+var modalContent = document.querySelector(".modal-content");
+var modalText = document.querySelector("#modalText");
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
 // input value check ------------------
 function inputCheck(){
  
-  if(age.value=='' || height.value=='' || weight.value=='' || (male.checked==false && female.checked==false)){
+  if (eqName.value=='' || eqWeight.value=='' || eqWidth.value=='' || (impact1.checked==false && impact2.checked==false)){
     modal.style.display = "block";
     modalText.innerHTML = `All fields are required!`;
 
@@ -42,10 +42,10 @@ window.onclick = function(event) {
 
 // main calculating function-----------------
 function calCulate(){
-  let p = [age.value, height.value, weight.value];
-  if(male.checked){
+  let p =  [eqName.value, eqWeight.value, eqWidth.value];
+  if(impact1.checked){
     p.push("Option1");
-  }else if(female.checked){
+  }else if(impact2.checked){
     p.push("Option2");
   }
 
