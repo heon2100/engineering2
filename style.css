@@ -20,7 +20,10 @@ h2 {
   font-size: 20px;
 }
 
-
+a {
+  vertical-align:middle;
+  font-size: 16px;
+}
 
 
 
@@ -178,9 +181,8 @@ body {
 
 
 .item1 {
-  flex-basis:100px;
+  flex-basis:110px;
   flex-shrink:0;
-  align-items: center;
   font-size: 16px;
   color: var(--text-color-b);
 }
@@ -224,7 +226,7 @@ body {
   border-bottom: 1px solid var(--color2);
   width: 50%;
   text-align: center;
-  font-size: 28px;
+  font-size: 18px;
   font-family: "Nunito", sans-serif;
 }
 
@@ -253,7 +255,7 @@ body {
   border-bottom: 1px solid var(--color2);
   width: 50%;
   text-align: center;
-  font-size: 28px;
+  font-size: 18px;
   font-family: "Nunito", sans-serif;
 }
 
@@ -494,9 +496,84 @@ button.calculate:hover {
 
 /*----------------------------------------------------------------*/
 
+/*----- modal popup chang ----*/
+/* The Modal (background) */
+.modal {
+  display: none;  /* Hidden by default */
+  position: fixed;   /* Stay in place */
+  z-index: 1;   /* Sit on top */
+  padding-top: 100px;   /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;  
+  height: 100%;
+  overflow: auto;   /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding-top: 300px;
+
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: #393c76 -1px 2px 2px 1px;
+}
+
+#modalText {
+  padding-top: 8px;
+  padding-right: 5px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color1);
+}
+
+.modal-wrong {
+  border: 2px solid red;
+}
+
+.modal-correct {
+  border: 2px solid green;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close:hover {
+  color: #d41111;
+}
+
+
+/*----------------------------------------------------------------*/
+
+/*-------------------------*/
 
 
 
+
+
+
+
+
+
+
+
+
+/*-------------------------*/
 
 
 @media (max-width: 500px) {
@@ -510,24 +587,18 @@ button.calculate:hover {
     font-size: 6vw;
   }
   h1{
-    font-size: 4vw;
+    font-size: 16px;
   }
 
-  .box1, .box3 {
+  .box1, .box2, .box3 {
     float:none;
-    width: 94%;  /* originally was 380px */
+    width: 94%;  
     margin-left:3%;
     margin-right:3%;
   }
 
   .result p {
     font-size: 5vw;
-  }
-  .box2 {
-    float:none;
-    width: 94%;
-    margin-left:3%;
-    margin-right:3%;
   }
 
   .custom-select {
@@ -545,18 +616,16 @@ button.calculate:hover {
   }
 
   
-
-
   .inputH label,
   .inputW label {
-    font-size: 14px;
+    font-size: 16px;
   }
 
 
   .content2 input,
   .inputH input,
   .inputW input {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .content3 {
@@ -568,20 +637,21 @@ button.calculate:hover {
   .content6 {
     width:100%;
     padding-bottom: 1%;
-    font-size:14px;
+    font-size:16px;
   }
 
-  .item1 {
-    font-size:14px;
-    flex-basis:90px;
-  }
+
 
   .content4 input,
   .content5 input,
   .ccotent6 input {
-    font-size:14px;
+    font-size:16px;
     width:100%;
   }
   
 
+
+  .modal-content {
+    width:400px;
+  }
 }
