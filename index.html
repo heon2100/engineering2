@@ -7,28 +7,28 @@
     <link rel="stylesheet" href="style.css">
     <title>Heavy Vehicle Calc.</title>
 </head>
+
 <body>
-  <div class=" header">
+  <header>
     <div>
-      <h1>계산시트 작성중에 있습니다.</h1>
+      <h1>Heavy Vehicle Calculation 계산시트 작성중에 있습니다.</h1>
     </div>
     <div>
-      <h1>Heavy Vehicle Calculation</h1>
+      <h1></h1>
     </div>
 
-  </div>
+  </header>
 
   <div class="container">
     
     <!-- 왼쪽 입력 창 ---------------------------------------------------------------------->
     <div class="box1">
-
       <div class="box_title">I N P U T</div>
       
       <!-- 장비재원 선택하기 -->
       <div class="container1">
 
-        <h1>장비하중</h1>
+        <h1>· 장비하중</h1>
 
         <div class="container2">
           <div class="container3">
@@ -42,39 +42,40 @@
                 <option value="direct">장비 직접입력</option>
               </select>
             </div>
-
           </div>
-          <div class="container3">
-            <div class="content1">
-              <div class="item1" style="letter-spacing:0.8ch;"> 장 비 명: </div>
-              <div class="item2"><input type="text" id="eqName"/></div>
+          <div class="container-hide expand">
+            <div class="container3">
+              <div class="content1">
+                <div class="item1"> 장 비 명: aaaaaaaaaaa</div>
+                <div class="item2"><input type="text" role="textbox" id="eqName" value="Excavator"/></div>
+              </div>
+              <div class="content2">
+                <div class="item1"> 장비중량 (kN): aaaaaaaaaaaa</div>
+                <div class="item2"><input type="number" id="eqWeight" value="240"/></div>
+              </div>
             </div>
-            <div class="content2">
-              <div class="item1" style="letter-spacing:0ch;"> 장비중량(kN): </div>
-              <div class="item2"><input type="number" id="eqWeight" value="240"/></div>
+  
+            <div class="container3">
+              <div class="content2">
+                <div class="item1"> 전 폭 (m): aaaaaaaaaaaa</div>
+                <div class="item2"><input type="number" id="eqWidth" value="120"/></div>
+              </div>
+              <div class="content2">
+                <div class="item1"> 전 고 (m): aaaaaaaaaaaa</div>
+                <div class="item2"><input type="number" id="eqLength" value="120"/></div>
+              </div>
+            </div>
+  
+            <div class="container3">
+              <div class="content2">
+                <div class="item1"> 슈 폭 (m): aaaaaaaaaaaa</div>
+                <div class="item2"><input type="number" id="eqContact" value="120"/></div>
+              </div>
             </div>
           </div>
-
+          
           <div class="container3">
-            <div class="content2">
-              <div class="item1" style="letter-spacing:0.4ch;"> 전 폭 (m): </div>
-              <div class="item2"><input type="number" id="eqWidth" value="120"/></div>
-            </div>
-            <div class="content2">
-              <div class="item1" style="letter-spacing:0.4ch;"> 전 고 (m): </div>
-              <div class="item2"><input type="number" id="eqLength" value="120"/></div>
-            </div>
-          </div>
-
-          <div class="container3">
-            <div class="content2">
-              <div class="item1" style="letter-spacing:0.4ch;"> 슈 폭 (m): </div>
-              <div class="item2"><input type="number" id="eqContact" value="120"/></div>
-            </div>
-          </div>
-
-          <div class="container3">
-            <div class="item1" style="letter-spacing:0.3ch; font-weight:600"> 충 격 계 수 </div>
+            <div class="item1 bold"> 충 격 계 수 aaaaaaaaaaaa</div>
             <div class="choices">
               <label class="container">
                   <input type="radio" name="radio" id="impact1"><p> 1.3 (기본) </p>
@@ -95,23 +96,23 @@
 
       <div class="container1">
 
-        <h1>해체 잔재물</h1>
+        <h1>· 해체 잔재물</h1>
         <div class="container2">
           
           <div class="container3">
             <div class="content2">
-              <div class="item1" style="letter-spacing:0.3ch;"> 높 이 (m): </div>
+              <div class="item1"> 높 이 (m): aaaaaaaaaaaa</div>
               <div class="item2"><input type="number" id="selboxDirect" value="0.4"/></div>
             </div>
             <div class="content2">
-              <div class="item1" style="letter: spacing 0.1ch;"> 비중(kN/m<sup>3</sup>): </div>
+              <div class="item1"> 비중 (kN/m³): aaaaaaaaaaaa</div>
               <div class="item2"><input type="number" id="selboxDirect" value="23"/></div>
             </div>
           </div>
 
           <div class="container3">
             <div class="content2">
-              <div class="item1" style="letter-spacing:0.73ch;"> 공 극 률: </div>
+              <div class="item1"> 공 극 률: aaaaaaaaaaaa</div>
                 <div class="item2"><input type="number" id="selboxDirect" value="0.7"/></div>
             </div>
           </div>
@@ -120,44 +121,41 @@
 
       <div class="container1">
 
-        <h1>슬래브 두께</h1>
+        <h1>· 슬래브 두께</h1>
+        
         <div class="container2">
           
           <div class="container4">
-            <div class="content1" style="padding-bottom:0px;">
-              <div class="item1" style="letter-spacing:0.3ch; text-align:right;"> f<sub>ck</sub>=&nbsp;</div>
+            <div class="content2">
+              <div class="item1-1"> f<sub>ck</sub> = aaaaaaaaaaaaaa</div>
               <div class="item2"><input type="number" id="selboxDirect" value="21"/></div>
-              <div><a>&nbsp;&nbsp;kN/m<sup>2</sup></a></div>
+              <div><a>&nbsp;kN/m²</a></div>
             </div>
           </div>
 
           <div class="container5">
-            <div class="container3">
-              <div class="content1" style="padding-bottom:0px;">
-                <div class="item1" style="letter-spacing:0.3ch; text-align:right;"> THK. &nbsp;</div>
-                <div class="item2"><input type="number" id="selboxDirect" value="120"/></div>
-                <div></div>
-              </div>
+            <div class="content3">
+              <div class="item1-1"> T H K . aaaaaaaaaaa</div>
+              <div class="item2"><input type="number" id="selboxDirect" value="120"/></div>
+              <a>&nbsp;mm</a>
             </div>
-            <div class="container3">
-              <div class="content1" style="padding:0px;">
-                <div class="item1" style="text-align:right;"><a>(mm)&nbsp;&nbsp;&nbsp;</a></div>
-                <div class="item2"><input type="number" id="selboxDirect"value="150"/></div>
-              </div>
+            <div class="content3">
+              <div class="item1-1"></div>
+              <div class="item2"><input type="number" id="selboxDirect"value="150"/></div>
+              <a>&nbsp;mm</a>
             </div>
-            <div class="container3">
-              <div class="content1" style="padding:0px;">
-                <div class="item1" style="letter-spacing:0.3ch; text-align:right;"></div>
-                <div class="item2"><input type="number" id="selboxDirect"value="180"/></div>
-              </div>
+            <div class="content3">
+              <div class="item1-1"></div>
+              <div class="item2"><input type="number" id="selboxDirect"value="180"/></div>
+              <a>&nbsp;mm</a>
             </div>
-            <div class="container3">
-              <div class="content1" style="padding:0px;">
-                <div class="item1" style="letter-spacing:0.3ch; text-align:right;"></div>
-                <div class="item2"><input type="number" id="selboxDirect"value="210"/></div>
-              </div>
+            <div class="content3">
+              <div class="item1-1"></div>
+              <div class="item2"><input type="number" id="selboxDirect"value="210"/></div>
+              <a>&nbsp;mm </a>
             </div>
           </div>
+
         </div>
       </div>  <!-- container1 끝-->
         
@@ -166,7 +164,7 @@
 
         <button class="calculate" id="submit" onclick="inputCheck();">Calculate 장비하중</button>
       
-      </div><!-- container1 끝-->
+      </div> <!-- container1 끝-->
 
     </div><!-- BOX1 끝-------------------------------------------------------->
         
@@ -179,15 +177,15 @@
 
 
     </div>
+    <!----------------------------------------------------------->
+  
 
-  </div>
-
-<!----------------------  삭제할 구간입니다  ---------------->
-  <div class="container">
+    <!----------------------  삭제할 구간입니다  ---------------->
+  
     <div class="box2">
       <div class="box_title">O U T P U T</div>
 
-      <h1>
+      <div class="result">
         <math>
           <mrow>
             <mi>x</mi>
@@ -225,32 +223,30 @@
             </mfrac>
           </mrow>
         </math>
-      </h1>
-
-      <div class="content">
-        <div class="result">
-          <p>사용장비하중은 다음과 같습니다.</p>
-          <div id="result">00.00</div>
-          <p class="comment"></p>
-        </div>
+        <p>사용장비하중은 다음과 같습니다.</p>
+        <div id="result">00.00</div>
+        <p class="comment"></p>
       </div>
+
 
     </div>
 
     <div class="box3">
       <h1>원하는 결과물</h1>
       <img src="images/목표결과페이지.jpg">
-
     </div>
-  </div>
- <!---------------------------------------------->
+    <!----------------삭제할 구간 끝------------------------------>
+
+
+  </div> <!-------Container  끝 ---이게 Main 이랑 같은거지---------------------->
+  
 
 
 
   <a href="#" target="_blank" class="linkDownload">Linky Linky</a>
-
-  <div class="footer"><a class="footer-text" target="_blank" href="#">©2022-2024 Heon, lnc</a></div>
-
+  <footer>
+  <a class="footer-text" target="_blank" href="#">©2022-2024 Heon, lnc</a>
+  </footer>  
 
 
 
@@ -265,10 +261,6 @@
 
 
 
-  
-
-
-   
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script.js"></script>
