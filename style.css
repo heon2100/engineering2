@@ -181,13 +181,14 @@ mn {
   flex-direction: column;
 }
 .container-hide {
-  display:none;
-  height:0;
-  transition: height 0.3s
+  visibility: hidden;
+  height: 0vh;
+  transition: height 0.3s ease-in-out;
 }
 .container-hide.expand {
-  display:contents;
-  height: calc-size(auto);
+  visibility: visible;
+  height: 6vh;
+  overflow:clip;
 }
 
 
@@ -682,6 +683,10 @@ button.calculate:hover {
   .container4,
   .container5 {
     width: 100%;
+  }
+
+  .container-hide.expand {
+    height: 12vh;
   }
 
   .content1, 
