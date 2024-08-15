@@ -1,269 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Heavy Vehicle Calc.</title>
-</head>
+var eqName = document.getElementById("eqName");
+let eqWeight = document.getElementById("eqWeight");
+let eqWidth = document.getElementById("eqWidth");
+let impact1 = document.getElementById("impact1");
+let impact2 = document.getElementById("impact2");
+var form = document.getElementById("form");
+let resultArea = document.querySelector(".comment");
 
-<body>
-  <header>
-    <div>
-      <h1>Heavy Vehicle Calculation 계산시트 작성중에 있습니다.</h1>
-    </div>
-    <div>
-      <h1></h1>
-    </div>
+var modalContent = document.querySelector(".modal-content");
+var modalText = document.querySelector("#modalText");
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 
-  </header>
 
-  <div class="container">
-    
-    <!-- 왼쪽 입력 창 ---------------------------------------------------------------------->
-    <div class="box1">
-      <div class="box_title">I N P U T</div>
+const excavator =[
+  {eqName: 'excavator'  , eqWeight: 160, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H03 DX60' , eqWeight:  60, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H06 DX140', eqWeight: 140, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H08 DX240', eqWeight: 240, eqWidth: 120, eqLength: 240, eqContact: 40},
+];
+
+
+
+// input value check ------------------
+function inputCheck(){
+ 
+  if (eqName.value=='' || eqWeight.value=='' || eqWidth.value=='' || (impact1.checked==false && impact2.checked==false)){
+    modal.style.display = "block";
+    modalText.innerHTML = `All fields are required!`;
+
+  }else{
+    calCulate();
+  }
+
+}
+//--------------------------------------------------------------
+
+// When the user clicks on <span> (x), close the modal-----------
+span.onclick = function() {
+  modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+//--------------------------------------------------------------
+
+
+
+// This is MAIN calculating function  ----------------------
+function calCulate(){
+  let p =  [eqName.value, eqWeight.value, eqWidth.value];
+  if(impact1.checked){
+    p.push("Option1");
+  }else if(impact2.checked){
+    p.push("Option2");
+  }
+
+  let bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
       
-      <!-- 장비재원 선택하기 -->
-      <div class="container1">
-
-        <h1>· 장비하중</h1>
-
-        <div class="container2">
-          <div class="container3">
-            
-            <div class="custom-select"  onchange="handleOnChange(this)">
-              <select>
-                <option value="0">장비선택</option>
-                <option value="1">B/H03 DX60</option>
-                <option value="2">B/06 DX140</option>
-                <option value="3">B/08 DX240</option>
-                <option value="direct">장비 직접입력</option>
-              </select>
-            </div>
-          </div>
-          <div class="container-hide expand">
-            <div class="container3">
-              <div class="content1">
-                <div class="item1"> 장 비 명: aaaaaaaaaaa</div>
-                <div class="item2"><input type="text" role="textbox" id="eqName" value="Excavator"/></div>
-              </div>
-              <div class="content2">
-                <div class="item1"> 장비중량 (kN): aaaaaaaaaaaa</div>
-                <div class="item2"><input type="number" id="eqWeight" value="240"/></div>
-              </div>
-            </div>
-  
-            <div class="container3">
-              <div class="content2">
-                <div class="item1"> 전 폭 (m): aaaaaaaaaaaa</div>
-                <div class="item2"><input type="number" id="eqWidth" value="120"/></div>
-              </div>
-              <div class="content2">
-                <div class="item1"> 전 고 (m): aaaaaaaaaaaa</div>
-                <div class="item2"><input type="number" id="eqLength" value="120"/></div>
-              </div>
-            </div>
-  
-            <div class="container3">
-              <div class="content2">
-                <div class="item1"> 슈 폭 (m): aaaaaaaaaaaa</div>
-                <div class="item2"><input type="number" id="eqContact" value="120"/></div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="container3">
-            <div class="item1 bold"> 충 격 계 수 aaaaaaaaaaaa</div>
-            <div class="choices">
-              <label class="container">
-                  <input type="radio" name="radio" id="impact1"><p> 1.3 (기본) </p>
-                  <span class="checkmark"></span>
-              </label>
-              <label class="container">
-                  <input type="radio" name="radio" id="impact2"><p> 1.4 (제안)</p>
-                    <span class="checkmark"></span>
-              </label>
-            </div>
-          </div>
-          
-
-        </div>
-
-      </div>  <!-- container1 끝-->
-
-
-      <div class="container1">
-
-        <h1>· 해체 잔재물</h1>
-        <div class="container2">
-          
-          <div class="container3">
-            <div class="content2">
-              <div class="item1"> 높 이 (m): aaaaaaaaaaaa</div>
-              <div class="item2"><input type="number" id="selboxDirect" value="0.4"/></div>
-            </div>
-            <div class="content2">
-              <div class="item1"> 비중 (kN/m³): aaaaaaaaaaaa</div>
-              <div class="item2"><input type="number" id="selboxDirect" value="23"/></div>
-            </div>
-          </div>
-
-          <div class="container3">
-            <div class="content2">
-              <div class="item1"> 공 극 률: aaaaaaaaaaaa</div>
-                <div class="item2"><input type="number" id="selboxDirect" value="0.7"/></div>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- container1 끝-->
-
-      <div class="container1">
-
-        <h1>· 슬래브 두께</h1>
-        
-        <div class="container2">
-          
-          <div class="container4">
-            <div class="content2">
-              <div class="item1-1"> f<sub>ck</sub> = aaaaaaaaaaaaaa</div>
-              <div class="item2"><input type="number" id="selboxDirect" value="21"/></div>
-              <div><a>&nbsp;kN/m²</a></div>
-            </div>
-          </div>
-
-          <div class="container5">
-            <div class="content3">
-              <div class="item1-1"> T H K . aaaaaaaaaaa</div>
-              <div class="item2"><input type="number" id="selboxDirect" value="120"/></div>
-              <a>&nbsp;mm</a>
-            </div>
-            <div class="content3">
-              <div class="item1-1"></div>
-              <div class="item2"><input type="number" id="selboxDirect"value="150"/></div>
-              <a>&nbsp;mm</a>
-            </div>
-            <div class="content3">
-              <div class="item1-1"></div>
-              <div class="item2"><input type="number" id="selboxDirect"value="180"/></div>
-              <a>&nbsp;mm</a>
-            </div>
-            <div class="content3">
-              <div class="item1-1"></div>
-              <div class="item2"><input type="number" id="selboxDirect"value="210"/></div>
-              <a>&nbsp;mm </a>
-            </div>
-          </div>
-
-        </div>
-      </div>  <!-- container1 끝-->
-        
-
-      <div class="container1">
-
-        <button class="calculate" id="submit" onclick="inputCheck();">Calculate 장비하중</button>
-      
-      </div> <!-- container1 끝-->
-
-    </div><!-- BOX1 끝-------------------------------------------------------->
-        
-
-    <!--BOX2  오른쪽 결과 창-------------------------------------->
-    <div class="box2">
-      <div class="box_title">O U T P U T</div>
-      
-
-
-
-    </div>
-    <!----------------------------------------------------------->
-  
-
-    <!----------------------  삭제할 구간입니다  ---------------->
-  
-    <div class="box2">
-      <div class="box_title">O U T P U T</div>
-
-      <div class="result">
-        <math>
-          <mrow>
-            <mi>x</mi>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mrow>
-                  <mo>-</mo><mo class="op1"></mo>
-                  <mi>s</mi><mi>i</mi><mi>n</mi><mn>·</mn><mi>𝜙</mi>
-                </mrow>
-                <mo>&PlusMinus;</mo>
-                <msqrt>
-                  <mrow>
-                    <msup>
-                      <mi>b</mi>
-                      <mn>2</mn>
-                    </msup>
-                    <mo>-</mo>
-                    <mrow>
-                      <mn class="egogo"></mn><mn>·</mn>
-                      <mo>&InvisibleTimes;</mo>
-                      <mi>a</mi><mn>·</mn>
-                      <mo>&InvisibleTimes;</mo>
-                      <mi>c</mi>
-                    </mrow>
-                  </mrow>
-                </msqrt>
-              </mrow>
-              <mrow>
-                <mn class="esult"></mn>
-                <mo>&InvisibleTimes;</mo>
-                <mn>·</mn>
-                <mi>a</mi>
-              </mrow>
-            </mfrac>
-          </mrow>
-        </math>
-        <p>사용장비하중은 다음과 같습니다.</p>
-        <div id="result">00.00</div>
-        <p class="comment"></p>
-      </div>
-
-
-    </div>
-
-    <div class="box3">
-      <h1>원하는 결과물</h1>
-      <img src="images/목표결과페이지.jpg">
-    </div>
-    <!----------------삭제할 구간 끝------------------------------>
-
-
-  </div> <!-------Container  끝 ---이게 Main 이랑 같은거지---------------------->
+  let result = '';
+  if(bmi<18.5){
+    result = '여유가 있어요';
+     }else if(18.5<=bmi&&bmi<=24.9){
+    result = '적정함';
+     }else if(25<=bmi&&bmi<=29.9){
+    result = '초과 됨으로 재검토 필요1';
+     }else if(30<=bmi&&bmi<=34.9){
+    result = '초과 됨으로 재검토 필요2';
+     }else if(35<=bmi){
+    result = '초과 됨으로 재검토 필요3';
+     }
   
 
 
-
-  <a href="#" target="_blank" class="linkDownload">Linky Linky</a>
-  <footer>
-  <a class="footer-text" target="_blank" href="#">©2022-2024 Heon, lnc</a>
-  </footer>  
-
-
-
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p id="modalText"></p>
-    </div></div>
+resultArea.style.display = "block";
+document.querySelector(".comment").innerHTML = `${p[0]} 장비하중은 <span id="comment">${result}</span>`;
+document.querySelector("#result").innerHTML = bmi.toFixed(2);
+document.querySelector(".esult").innerHTML = bmi.toFixed(2);
+document.querySelector(".egogo").innerHTML = p[0];
+document.querySelector(".op1").innerHTML = p[3];
+}
 
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="script.js"></script>
 
-</body>
-</html>
+// 드랍다운 목록선택 효과 ----------------------------------------------------------------
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+    // 여기에 추가로 내가 이벤트 발생하게 만들었음 -----------------------------------------------------//
+    c.addEventListener("click", handleChange);
+    c.addEventListener("click", inputWindow);
+    //----------------------------------------------------------------------------------------------//
+
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+
+    });
+
+
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+
+
+//-------------------------------------------------------------------------
+
+
+//-------- Equipment Info ---------------------------------------
+
+
+//------------ Choose Equipment Auto fill info -------------
+function handleOnChange(e) {
+  // // 선택된 데이터 가져오기
+  // const equip = e.value;
+  console.log(e.value);
+  // // 데이터 출력
+  // document.getElementById('eqName').value
+  //   = excavator[equip].eqName;
+
+}
+
+
+
+
+
+// select 요소 참조 자동입력 기능
+function handleChange() {
+  // value 값 가져오기
+  const a = document.getElementById('eQ').value;
+  // 자동입력
+  document.getElementById('eqName').value = excavator[a].eqName;
+  document.getElementById('eqWeight').value = excavator[a].eqWeight;
+  document.getElementById('eqWidth').value = excavator[a].eqWidth;
+  document.getElementById('eqLength').value = excavator[a].eqLength;
+  document.getElementById('eqContact').value = excavator[a].eqContact;
+
+  // 상태를 콘솔에 표시
+  console.log(`선택된 장비는 ${excavator[a].eqName} 입니다.`);
+
+}
+
+function inputWindow() {
+  const a = document.getElementById('eQ').value;
+  const b = document.querySelectorAll('div.container-hide');
+  console.log(b)
+  for (let i = 0; i < 3; i++) {
+    if (a == 0) {
+      b[i].classList.add('expand');
+    } else {
+      b[i].classList.remove('expand');
+    }
+  }
+}
