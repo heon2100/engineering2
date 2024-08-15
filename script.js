@@ -11,6 +11,16 @@ var modalText = document.querySelector("#modalText");
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
+
+const excavator =[
+  {eqName: 'excavator'  , eqWeight: 160, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H03 DX60' , eqWeight:  60, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H06 DX140', eqWeight: 140, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H08 DX240', eqWeight: 240, eqWidth: 120, eqLength: 240, eqContact: 40},
+];
+
+
+
 // input value check ------------------
 function inputCheck(){
  
@@ -39,7 +49,7 @@ window.onclick = function(event) {
 
 
 
-// main calculating function-----------------
+// This is MAIN calculating function  ----------------------
 function calCulate(){
   let p =  [eqName.value, eqWeight.value, eqWidth.value];
   if(impact1.checked){
@@ -48,7 +58,6 @@ function calCulate(){
     p.push("Option2");
   }
 
-  console.log(2)
   let bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
       
   let result = '';
@@ -73,8 +82,6 @@ document.querySelector(".esult").innerHTML = bmi.toFixed(2);
 document.querySelector(".egogo").innerHTML = p[0];
 document.querySelector(".op1").innerHTML = p[3];
 }
-
-
 
 
 
@@ -124,6 +131,11 @@ for (i = 0; i < l; i++) {
         h.click();
     });
     b.appendChild(c);
+    // 여기에 추가로 내가 이벤트 발생하게 만들었음 -----------------------------------------------------//
+    c.addEventListener("click", handleChange);
+    c.addEventListener("click", inputWindow);
+    //----------------------------------------------------------------------------------------------//
+
   }
   x[i].appendChild(b);
   a.addEventListener("click", function(e) {
@@ -133,7 +145,10 @@ for (i = 0; i < l; i++) {
       closeAllSelect(this);
       this.nextSibling.classList.toggle("select-hide");
       this.classList.toggle("select-arrow-active");
+
     });
+
+
 }
 function closeAllSelect(elmnt) {
   /*a function that will close all select boxes in the document,
@@ -155,6 +170,7 @@ function closeAllSelect(elmnt) {
       x[i].classList.add("select-hide");
     }
   }
+
 }
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
@@ -164,20 +180,49 @@ document.addEventListener("click", closeAllSelect);
 //-------------------------------------------------------------------------
 
 
+//-------- Equipment Info ---------------------------------------
 
 
-// ----------------------- 추가 기능 -------------------- 이헌우 작성 - ------------
-
-
+//------------ Choose Equipment Auto fill info -------------
 function handleOnChange(e) {
-  // 선택된 데이터의 텍스트값 가져오기
-  const text = e.options[e.selectedIndex].text;
-  
-  console.log(e.options);
-  
-  // 선택한 텍스트 출력
-  document.getElementById('abcde').innerText
-    = text;
+  // // 선택된 데이터 가져오기
+  // const equip = e.value;
+  console.log(e.value);
+  // // 데이터 출력
+  // document.getElementById('eqName').value
+  //   = excavator[equip].eqName;
+
 }
 
-//이거 왜 안되냐
+
+
+
+
+// select 요소 참조 자동입력 기능
+function handleChange() {
+  // value 값 가져오기
+  const a = document.getElementById('eQ').value;
+  // 자동입력
+  document.getElementById('eqName').value = excavator[a].eqName;
+  document.getElementById('eqWeight').value = excavator[a].eqWeight;
+  document.getElementById('eqWidth').value = excavator[a].eqWidth;
+  document.getElementById('eqLength').value = excavator[a].eqLength;
+  document.getElementById('eqContact').value = excavator[a].eqContact;
+
+  // 상태를 콘솔에 표시
+  console.log(`선택된 장비는 ${excavator[a].eqName} 입니다.`);
+
+}
+
+function inputWindow() {
+  const a = document.getElementById('eQ').value;
+  const b = document.querySelectorAll('div.container-hide');
+  console.log(b)
+  for (let i = 0; i < 3; i++) {
+    if (a == 0) {
+      b[i].classList.add('expand');
+    } else {
+      b[i].classList.remove('expand');
+    }
+  }
+}
