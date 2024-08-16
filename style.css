@@ -32,59 +32,37 @@
 body {
   min-height: 100vh;
   background: var(--color5);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  'header'
+  'main'
+  'footer';
 }
 
-header {
+body > header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   padding: 0.6rem 1.0rem;
   background-color: var(--color1);
   box-shadow: 0.2rem 0.2rem 1.2rem 0.4rem var(--shadow-color);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
-.container {
-  min-width: 100px;
+body > main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items:flex-start;
+  justify-content: center;
+  grid-area: main;
+  overflow: auto;
 } 
 
 
-.box1 {
-  width: 500px;
-  background: var(--color4);
-  border-radius: 0.6rem ;
-  box-shadow: 0.2rem 0.2rem 1.2rem 0.4rem var(--shadow-color);
-  margin: 0.6rem 0 0 0.6rem;
-  padding-bottom: 0.6rem;
-  color:var(--text-color-b);
-}
-.box2 {
-  width: 500px;
-  background: var(--color4);
-  border-radius: 0.6rem;
-  box-shadow: 0.2rem 0.2rem 1.2rem 0.4rem var(--shadow-color);
-  margin: 0.6rem 0 0 0.6rem;
-  padding-bottom: 0.6rem;
-  color:var(--text-color-b);
-}
-/*----------- box3은 추후에 삭제-------------*/
-.box3 {
-  width: 600px;
-  background: var(--color4);
-  border-radius: 0.6rem;
-  box-shadow: 0.2rem 0.2rem 1.2rem 0.4rem var(--shadow-color);
-  margin: 0.6rem 0 0 0.6rem;
-  padding-bottom: 0.6rem;
-  color:var(--text-color-b);
-  object-fit:contain;
-}
-.box3 > img{
-  width:100%;
-  height: 100%;
-}
-/*------------------------------------------*/
 .box_title {
   display: block;
   color: var(--text-color-b);
@@ -94,16 +72,58 @@ header {
   text-align:center;
 }
 
+.box1 {
+  width: 500px;
+  background: var(--color4);
+  border-radius: 0.6rem ;
+  box-shadow: 0.2rem 0.2rem 1.2rem 0.4rem var(--shadow-color);
+  margin: 0.6rem;
+  padding: 0.6rem;
+  color:var(--text-color-b);
+  resize: horizontal;
+  overflow: auto;
+}
+.box2 {   /*---A4 size in pixel: 	2480px x 3508px --*/
+  width: calc(2480px/3);
+  height: auto;
+  resize: both;
+  overflow:hidden;
+  background: var(--color4);
+  border-radius: 0.6rem;
+  box-shadow: 0.2rem 0.2rem 1.2rem 0.4rem var(--shadow-color);
+  margin: 0.6rem;
+  padding: 0.6rem;
+  color:var(--text-color-b);
+  visibility: visible;
+
+}
+
+.box2 > img {
+  width: 100%;
+}
 
 
+.table1 {    /*---A4 size in pixel: 	2480px x 3508px --*/
+  width:100%;
+  aspect-ratio: 1 / 1.3;
+  display: grid;
+  grid-template-columns:  repeat(5, 1fr) 2fr repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr) 2fr repeat(4, 1fr);
+  border: 1px solid black;
 
-footer {
+}
+
+
+body > footer {
+  position: sticky;
+  bottom: 0;
+  background: var(--color1);
+  padding: 0.6rem 1.0rem;
   display: flex;
   justify-content: start;
   clear: both;
   align-items: center;
-  background: var(--color1);
-  padding: 0.6rem 1.0rem;
+
 }
 
 .footer-text {
@@ -122,7 +142,7 @@ footer {
 
 
 
-/*-------------- 기타 컨텐츠 ---------------------*/
+/*-------------- 기타 컨텐츠 ---------------------------*/
 
 h1 {
   font-size: 1.2rem;
@@ -148,10 +168,8 @@ mn {
 
 /*--------------Container 박스안 인풋값 컨텐츠 ---------------------*/
 
+
 .container1 {
-  margin: 1% 2% 3% 2%;
-}
-.container2 {
   background: var(--bg-color-trans);
   box-shadow: 0 0 2rem 0 var(--shadow-color);
   border-radius: 0.4rem;
@@ -162,34 +180,44 @@ mn {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.container3 {
+.container2 {
   width:100%;
   margin: 0.2rem 0.4rem;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  flex-wrap: wrap;
 }
-.container4 {
+.container3 {
   align-items:flex-start;
   margin: 0.2rem 0.4rem;
   display:flex;
   justify-content:space-between;
 }
-.container5 {
+.container4 {
   margin: 0.2rem 0.4rem;
   display:flex;
   flex-direction: column;
 }
+
+
 .container-hide {
-  visibility: hidden;
-  height: 0vh;
-  transition: height 0.3s ease-in-out;
+  display: grid;
+  width: 100%;
+  grid-template-rows: 0fr 0fr 0fr;
+  transition: grid-template-rows 0.6s ease-out;
 }
-.container-hide.expand {
-  visibility: visible;
-  height: 6vh;
-  overflow:clip;
+.container-hide .container2 {
+  overflow: hidden;
+  width:auto;
 }
+.expand {
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+
+
+
 
 
 .content1 {
@@ -210,8 +238,6 @@ mn {
   display:flex;
   align-items: center;
 }
-
-
 
 
 .item1 {
@@ -319,15 +345,14 @@ mn {
 
 
 
-
+/*-------Calculate BUtton------------*/
 button.calculate {
   cursor: pointer;
-  font-family: "Nunito", sans-serif;
   color: var(--text-color-d);
   background: var(--color1);
-  font-size: 16px;
-  border-radius: 7px;
-  padding: 12px 0;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
   width: 100%;
   outline: none;
   border: none;
@@ -337,6 +362,9 @@ button.calculate {
 button.calculate:hover {
   background: var(--color2);
 }
+
+/*----------------------------------*/
+
 
 
 
@@ -614,6 +642,16 @@ button.calculate:hover {
 }
 
 
+/*----- print screen ---*/
+
+.printtb {
+  width: 100%;
+  height: 1.2rem;
+
+}
+
+
+
 /*----------------------------------------------------------------*/
 
 /*-------------------------*/
@@ -650,11 +688,12 @@ button.calculate:hover {
     font-size: 6vw;
   }
 
-  .box1, .box2, .box3 {
-    float:none;
-    width: 94%;  
+  .box1, .box2 {
+    width: 96%;  
     margin-left:2%;
     margin-right:2%;
+    resize: none;
+    overflow: visible;
   }
 
   .result p {
@@ -679,14 +718,11 @@ button.calculate:hover {
   .container3 {
     flex-direction:column;
     align-items: stretch;
+    justify-content: space-around;
   }
   .container4,
   .container5 {
     width: 100%;
-  }
-
-  .container-hide.expand {
-    height: 12vh;
   }
 
   .content1, 
