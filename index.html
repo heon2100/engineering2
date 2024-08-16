@@ -19,32 +19,36 @@
 
   </header>
 
-  <div class="container">
+  <main>
     
     <!-- 왼쪽 입력 창 ---------------------------------------------------------------------->
     <div class="box1">
       <div class="box_title">I N P U T</div>
       
       <!-- 장비재원 선택하기 -->
+
+      
+      <!---------장비재원 선택하기-------------------------------------------------------------->
+      <h1>· 장비하중</h1>
+
       <div class="container1">
 
-        <h1>· 장비하중</h1>
-
         <div class="container2">
-
-          <div class="container3">
-            <div class="custom-select">
-              <select id="eQ">
-                <option value="default">장비선택</option>
-                <option value="0">장비 직접입력</option>
-                <option value="1">B/H03 DX60</option>
-                <option value="2">B/H06 DX140</option>
-                <option value="3">B/H08 DX240</option>
-              </select>
-            </div>
+          <div class="custom-select">
+            <select id="eQ">
+              <option value="default">장비선택</option>
+              <option value="0">장비 직접입력</option>
+              <option value="1">B/H03 DX60</option>
+              <option value="2">B/H06 DX140</option>
+              <option value="3">B/H08 DX240</option>
+            </select>
           </div>
+        </div>
 
-          <div class="container3 container-hide">
+
+        <div class="container-hide">
+
+          <div class="container2">
             <div class="content1">
               <div class="item1"> 장 비 명: aaaaaaaaaaa</div>
               <div class="item2"><input type="text" id="eqName" value="Excavator"/></div>
@@ -55,124 +59,139 @@
             </div>
           </div>
 
-          <div class="container3 container-hide">
+          <div class="container2">
+            <div class="content2">
+              <div class="item1"> 축 거 리 (m): aaaaaaaaaaaa</div>
+              <div class="item2"><input type="number" id="axDis" value="120"/></div>
+            </div>
             <div class="content2">
               <div class="item1"> 전 폭 (m): aaaaaaaaaaaa</div>
               <div class="item2"><input type="number" id="eqWidth" value="120"/></div>
             </div>
+          </div>
+
+          <div class="container2">
             <div class="content2">
               <div class="item1"> 전 고 (m): aaaaaaaaaaaa</div>
               <div class="item2"><input type="number" id="eqLength" value="120"/></div>
             </div>
-          </div>
-  
-          <div class="container3 container-hide">
+
             <div class="content2">
               <div class="item1"> 슈 폭 (m): aaaaaaaaaaaa</div>
               <div class="item2"><input type="number" id="eqContact" value="120"/></div>
             </div>
           </div>
-          
-          <div class="container3">
-            <div class="item1 bold"> 충 격 계 수 aaaaaaaaaaaa</div>
-            <div class="choices">
-              <label class="container">
-                  <input type="radio" name="radio" id="impact1"><p> 1.3 (기본) </p>
+        </div>
+
+        
+        <div class="container2">
+          <div class="item1 bold"> 충 격 계 수 aaaaaaaaaaaa</div>
+          <div class="choices">
+            <label class="container">
+                <input type="radio" name="radio" id="impact1"><p> 1.3 (기본) </p>
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <input type="radio" name="radio" id="impact2"><p> 1.4 (제안)</p>
                   <span class="checkmark"></span>
-              </label>
-              <label class="container">
-                  <input type="radio" name="radio" id="impact2"><p> 1.4 (제안)</p>
-                    <span class="checkmark"></span>
-              </label>
-            </div>
-          </div>
-          
-
-        </div>
-
-      </div>  <!-- container1 끝-->
-
-
-      <div class="container1">
-
-        <h1>· 해체 잔재물</h1>
-        <div class="container2">
-          
-          <div class="container3">
-            <div class="content2">
-              <div class="item1"> 높 이 (m): aaaaaaaaaaaa</div>
-              <div class="item2"><input type="number" id="selboxDirect" value="0.4"/></div>
-            </div>
-            <div class="content2">
-              <div class="item1"> 비중 (kN/m³): aaaaaaaaaaaa</div>
-              <div class="item2"><input type="number" id="selboxDirect" value="23"/></div>
-            </div>
-          </div>
-
-          <div class="container3">
-            <div class="content2">
-              <div class="item1"> 공 극 률: aaaaaaaaaaaa</div>
-                <div class="item2"><input type="number" id="selboxDirect" value="0.7"/></div>
-            </div>
+            </label>
           </div>
         </div>
-      </div>  <!-- container1 끝-->
-
-      <div class="container1">
-
-        <h1>· 슬래브 두께</h1>
-
-        <div class="container2">
-          
-          <div class="container4">
-            <div class="content2">
-              <div class="item1-1"> f<sub>ck</sub> = aaaaaaaaaaaaaa</div>
-              <div class="item2"><input type="number" id="selboxDirect" value="21"/></div>
-              <div><a>&nbsp;kN/m²</a></div>
-            </div>
-          </div>
-
-          <div class="container5">
-            <div class="content3">
-              <div class="item1-1"> T H K . aaaaaaaaaaa</div>
-              <div class="item2"><input type="number" id="selboxDirect" value="120"/></div>
-              <a>&nbsp;mm</a>
-            </div>
-            <div class="content3">
-              <div class="item1-1"></div>
-              <div class="item2"><input type="number" id="selboxDirect"value="150"/></div>
-              <a>&nbsp;mm</a>
-            </div>
-            <div class="content3">
-              <div class="item1-1"></div>
-              <div class="item2"><input type="number" id="selboxDirect"value="180"/></div>
-              <a>&nbsp;mm</a>
-            </div>
-            <div class="content3">
-              <div class="item1-1"></div>
-              <div class="item2"><input type="number" id="selboxDirect"value="210"/></div>
-              <a>&nbsp;mm </a>
-            </div>
-          </div>
-
-        </div>
-      </div>  <!-- container1 끝-->
         
 
+      </div>
+      <!---------장비재원 선택하기 끝----------------------------------------------------------->
+        
+      <!---------해체 잔재물 입력-------------------------------------------------------------->
+
+      <h1>· 해체 잔재물</h1>
       <div class="container1">
+        
+        <div class="container2">
+          <div class="content2">
+            <div class="item1"> 높 이 (m): aaaaaaaaaaaa</div>
+            <div class="item2"><input type="number" id="db-H" value="0.4"/></div>
+          </div>
+          <div class="content2">
+            <div class="item1"> 비 중 (kN/m³): aaaaaaaaaaaa</div>
+            <div class="item2"><input type="number" id="db-Density" value="23"/></div>
+          </div>
+        </div>
 
-        <button class="calculate" id="submit" onclick="inputCheck();">Calculate 장비하중</button>
-      
-      </div> <!-- container1 끝-->
+        <div class="container2">
+          <div class="content2">
+            <div class="item1"> 공 극 률: aaaaaaaaaaaa</div>
+              <div class="item2"><input type="number" id="db-Porosity" value="0.7"/></div>
+          </div>
+        </div>
+      </div> 
+      <!---------해체 잔재물 입력 끝----------------------------------------------------------->
 
-    </div><!-- BOX1 끝-------------------------------------------------------->
+
+      <!---------슬래브 두께 입력-------------------------------------------------------------->  
+      <h1>· 슬래브 두께</h1>
+
+      <div class="container1">
+        
+        <div class="container3">
+          <div class="content2">
+            <div class="item1-1"> f<sub>ck</sub> = aaaaaaaaaaaaaa</div>
+            <div class="item2"><input type="number" id="fck" value="21"/></div>
+            <div><a>&nbsp;kN/m²</a></div>
+          </div>
+        </div>
+
+        <div class="container4">
+          <div class="content3">
+            <div class="item1-1"> T H K . aaaaaaaaaaa</div>
+            <div class="item2"><input type="number" id="thk1" value="120"/></div>
+            <a>&nbsp;mm</a>
+          </div>
+          <div class="content3">
+            <div class="item1-1"></div>
+            <div class="item2"><input type="number" id="thk2"value="150"/></div>
+            <a>&nbsp;mm</a>
+          </div>
+          <div class="content3">
+            <div class="item1-1"></div>
+            <div class="item2"><input type="number" id="thk3"value="180"/></div>
+            <a>&nbsp;mm</a>
+          </div>
+          <div class="content3">
+            <div class="item1-1"></div>
+            <div class="item2"><input type="number" id="thk4"value="210"/></div>
+            <a>&nbsp;mm </a>
+          </div>
+        </div>
+
+      </div> 
+      <!---------슬래브 두께 입력 끝----------------------------------------------------------->
+        
+      <!---------계산 버튼-------------------------------------------------------------->  
+      <button class="calculate" id="submit" onclick="inputCheck();">Calculate 장비하중
+      </button>
+      <!---------계산 버튼 끝----------------------------------------------------------->
+        
+
+    </div>
+    <!-- BOX1 끝----------------------------------------------------------------------------->
         
 
     <!--BOX2  오른쪽 결과 창-------------------------------------->
     <div class="box2">
-      <div class="box_title">O U T P U T</div>
-      
+      <div class="box_title">O U T P U T
+      </div>
 
+      <div class="table1">
+
+      </div>
+      
+      <div class="container2">
+        <div class="container3">
+          <div class="printtb"><a>print screen button</a>
+          </div>
+        </div>
+      </div>
 
 
     </div>
@@ -230,14 +249,14 @@
 
     </div>
 
-    <div class="box3">
+    <div class="box2">
       <h1>원하는 결과물</h1>
       <img src="images/목표결과페이지.jpg">
     </div>
     <!----------------삭제할 구간 끝------------------------------>
 
 
-  </div> <!-------Container  끝 ---이게 Main 이랑 같은거지---------------------->
+  </main> <!-------END Main ------------------------------------------------>
   
 
 
