@@ -13,10 +13,10 @@ var span = document.getElementsByClassName("close")[0];
 
 
 const excavator =[
-  {eqName: 'excavator'  , eqWeight: 160, eqWidth: 120, eqLength: 240, eqContact: 40},
-  {eqName: 'B/H03 DX60' , eqWeight:  60, eqWidth: 120, eqLength: 240, eqContact: 40},
-  {eqName: 'B/H06 DX140', eqWeight: 140, eqWidth: 120, eqLength: 240, eqContact: 40},
-  {eqName: 'B/H08 DX240', eqWeight: 240, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'excavator'  , eqWeight: 160, axDis: 450, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H03 DX60' , eqWeight:  60, axDis: 450, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H06 DX140', eqWeight: 140, axDis: 450, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'B/H08 DX240', eqWeight: 240, axDis: 450, eqWidth: 120, eqLength: 240, eqContact: 40},
 ];
 
 
@@ -205,24 +205,27 @@ function handleChange() {
   // 자동입력
   document.getElementById('eqName').value = excavator[a].eqName;
   document.getElementById('eqWeight').value = excavator[a].eqWeight;
+  document.getElementById('axDis').value = excavator[a].axDis;
   document.getElementById('eqWidth').value = excavator[a].eqWidth;
   document.getElementById('eqLength').value = excavator[a].eqLength;
   document.getElementById('eqContact').value = excavator[a].eqContact;
 
-  // 상태를 콘솔에 표시
-  console.log(`선택된 장비는 ${excavator[a].eqName} 입니다.`);
-
+  // 장비선택 상태를 콘솔에 표시
+  if (a==0) {
+    console.log(`선택된 장비는 직접 입력하셔야 합니다`);
+  } else {
+    console.log(`선택된 장비는 ${excavator[a].eqName} 입니다.`);
+  }
 }
 
 function inputWindow() {
   const a = document.getElementById('eQ').value;
-  const b = document.querySelectorAll('div.container-hide');
-  console.log(b)
-  for (let i = 0; i < 3; i++) {
+  const b = document.querySelector('div.container-hide');
     if (a == 0) {
-      b[i].classList.add('expand');
+      b.classList.add('expand');
     } else {
-      b[i].classList.remove('expand');
+      b.classList.remove('expand');
     }
-  }
 }
+
+
