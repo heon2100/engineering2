@@ -227,5 +227,3 @@ function inputWindow() {
       b.classList.remove('expand');
     }
 }
-
-
