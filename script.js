@@ -13,10 +13,10 @@ var span = document.getElementsByClassName("close")[0];
 
 
 const excavator =[
-  {eqName: 'excavator'  , eqWeight: 160, axDis: 450, eqWidth: 120, eqLength: 240, eqContact: 40},
-  {eqName: 'B/H03 DX60' , eqWeight:  60, axDis: 450, eqWidth: 120, eqLength: 240, eqContact: 40},
-  {eqName: 'B/H06 DX140', eqWeight: 140, axDis: 450, eqWidth: 120, eqLength: 240, eqContact: 40},
-  {eqName: 'B/H08 DX240', eqWeight: 240, axDis: 450, eqWidth: 120, eqLength: 240, eqContact: 40},
+  {eqName: 'excavator'  , eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
+  {eqName: 'B/H03 DX60' , eqWeight:  60, axDis: 1650, eqWidth: 1590, eqLength: 1500, eqContact: 400},
+  {eqName: 'B/H06 DX140', eqWeight: 140, axDis: 2650, eqWidth: 2090, eqLength: 2800, eqContact: 500},
+  {eqName: 'B/H08 DX240', eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
 ];
 
 
@@ -51,36 +51,66 @@ window.onclick = function(event) {
 
 // This is MAIN calculating function  ----------------------
 function calCulate(){
-  let p =  [eqName.value, eqWeight.value, eqWidth.value];
+  let input =  [eqName.value, eqWeight.value, axDis.value, eqWidth.value, eqLength.value, eqContact.value, db_Height.value, db_Density.value, db_Porosity.value, thk1.value, thk2.value, thk3.value, thk4.value];
+  let out = ['out_eqName','out_eqWeight', 'out_axDis', 'out_eqWidth', 'out_eqLength', 'out_eqContact', 'impact', 'out_db_Height','out_db_Density','out_db_Porosity','out_thk1','out_thk2','out_thk3','out_thk4'];
   if(impact1.checked){
-    p.push("Option1");
+    input.splice(6,0, 1.3);
   }else if(impact2.checked){
-    p.push("Option2");
+    input.splice(6,0, 1.4);;
   }
 
-  let bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
-      
+  let bmi = Number(input[2])/(Number(input[1])/100*Number(input[1])/100);
+
   let result = '';
   if(bmi<18.5){
     result = '여유가 있어요';
-     }else if(18.5<=bmi&&bmi<=24.9){
+  }else if(18.5<=bmi&&bmi<=24.9){
     result = '적정함';
-     }else if(25<=bmi&&bmi<=29.9){
+  }else if(25<=bmi&&bmi<=29.9){
     result = '초과 됨으로 재검토 필요1';
-     }else if(30<=bmi&&bmi<=34.9){
+  }else if(30<=bmi&&bmi<=34.9){
     result = '초과 됨으로 재검토 필요2';
-     }else if(35<=bmi){
+  }else if(35<=bmi){
     result = '초과 됨으로 재검토 필요3';
-     }
-  
+  }
+
+  resultArea.style.display = "block";
+  document.querySelector(".comment").innerHTML = `${input[0]} 장비하중은 <span id="comment">${result}</span>`;
+  document.querySelector("#result").innerHTML = bmi.toFixed(2);
+  document.querySelector(".result").innerHTML = bmi.toFixed(2);
 
 
-resultArea.style.display = "block";
-document.querySelector(".comment").innerHTML = `${p[0]} 장비하중은 <span id="comment">${result}</span>`;
-document.querySelector("#result").innerHTML = bmi.toFixed(2);
-document.querySelector(".esult").innerHTML = bmi.toFixed(2);
-document.querySelector(".egogo").innerHTML = p[0];
-document.querySelector(".op1").innerHTML = p[3];
+  // 여기가 테이블에 입력값 넣는 거임.
+  for (let i=0; i<input.length; i++) {
+    document.getElementById(out[i]).innerHTML = input[i];
+  }
+  // 식 값 넣기.. 같은 숫자는 계속 넣는 방법 없나.. 
+  document.getElementById('eqWeight_1').innerHTML = input[1];
+  document.getElementById('impact_1').innerHTML = input[6];
+  document.getElementById('axDis_1').innerHTML = input[2];
+  document.getElementById('eqWidth_1').innerHTML = input[3];
+  document.getElementById('wEW').innerHTML = ((input[1]*input[6])/(input[2]*input[3])*1000000).toFixed(1);
+
+  document.getElementById('eqWeight_2').innerHTML = input[1];
+  document.getElementById('impact_2').innerHTML = input[6];
+  document.getElementById('eqContact_2').innerHTML = input[5];
+  document.getElementById('axDis_2').innerHTML = input[2];
+  document.getElementById('wEI').innerHTML = ((input[1]*input[6])/(2*input[2]*input[5])*1000000).toFixed(1);
+
+
+
+  // 계산한 값들 넣기
+
+  let ws = input[7]*input[8]*input[9];
+  document.getElementById('ws').innerHTML = ws;
+  console.log(input[7],input[8], input[9])
+
+
+  for (let i=0; i<4; i++) {
+    document.getElementById(`wd${i+1}`).innerHTML = input[10+i]*24/1000;
+  }
+
+
 }
 
 
@@ -202,13 +232,15 @@ function handleOnChange(e) {
 function handleChange() {
   // value 값 가져오기
   const a = document.getElementById('eQ').value;
-  // 자동입력
+  // Input 값 자동입력
   document.getElementById('eqName').value = excavator[a].eqName;
   document.getElementById('eqWeight').value = excavator[a].eqWeight;
   document.getElementById('axDis').value = excavator[a].axDis;
   document.getElementById('eqWidth').value = excavator[a].eqWidth;
   document.getElementById('eqLength').value = excavator[a].eqLength;
   document.getElementById('eqContact').value = excavator[a].eqContact;
+
+
 
   // 장비선택 상태를 콘솔에 표시
   if (a==0) {
