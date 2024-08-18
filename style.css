@@ -833,7 +833,9 @@ button.calculate:hover {
   .box_title{
     font-size: 6vw;
   }
-
+  h1 {
+    font-size: 16px;
+  }
 
   .box1, .box2 {
     width: 96%;  
@@ -860,6 +862,10 @@ button.calculate:hover {
   .checkmark {
     height: 16px;
     width: 16px;
+  }
+  .var1, .var2,
+  input {
+    font-size: 16px;
   }
 
   .container3 {
