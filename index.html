@@ -130,36 +130,37 @@
 
       <div class="container1">
         
-        <div class="container3">
-          <div class="content2">
-            <div class="var2"> f<sub>ck</sub> = aaaaaaaaaaaaaa</div>
-            <div class="inputValue"><input type="number" id="fck" value="21"/></div>
-            <div><span>&nbsp;kN/m²</span></div>
+        <div class="container4">
+          <div class="content3">
+            <div class="var2"> T H K . aaaaaaaaaaaaa</div>
+            <div class="inputValue"><input type="number" id="thk1" value="120"/></div>
+            <div>&nbsp;mm</div>
+          </div>
+          <div class="content3">
+            <div class="var2"></div>
+            <div class="inputValue"><input type="number" id="thk2"value="150"/></div>
+            <div>&nbsp;mm</div>
+          </div>
+          <div class="content3">
+            <div class="var2"></div>
+            <div class="inputValue"><input type="number" id="thk3"value="180"/></div>
+            <div>&nbsp;mm</div>
+          </div>
+          <div class="content3">
+            <div class="var2"></div>
+            <div class="inputValue"><input type="number" id="thk4"value="210"/></div>
+            <div>&nbsp;mm </div>
           </div>
         </div>
 
         <div class="container4">
           <div class="content3">
-            <div class="var2"> T H K . aaaaaaaaaaaaa</div>
-            <div class="inputValue"><input type="number" id="thk1" value="120"/></div>
-            <a>&nbsp;mm</a>
-          </div>
-          <div class="content3">
-            <div class="var2"></div>
-            <div class="inputValue"><input type="number" id="thk2"value="150"/></div>
-            <a>&nbsp;mm</a>
-          </div>
-          <div class="content3">
-            <div class="var2"></div>
-            <div class="inputValue"><input type="number" id="thk3"value="180"/></div>
-            <a>&nbsp;mm</a>
-          </div>
-          <div class="content3">
-            <div class="var2"></div>
-            <div class="inputValue"><input type="number" id="thk4"value="210"/></div>
-            <a>&nbsp;mm </a>
+            <div class="var2"> f<sub>ck</sub> = aaaaaaaaaaaaaa</div>
+            <div class="inputValue"><input type="number" id="fck" value="21"/></div>
+            <div>&nbsp;kN/m²</div>
           </div>
         </div>
+
 
       </div> 
       <!---------↑ 슬래브 두께 입력 ↑----------------------------------------------------------->
@@ -296,9 +297,9 @@
           <div class="item"> 두께 = <span id="out_thk3"></span> </div>
           <div class="item"> 두께 = <span id="out_thk4"></span> </div>
           <div class="item"> <span>W<sub>D</sub> = <span id="wd1">2.9</span></span> </div>            
-          <div class="item"> <p>W<sub>D</sub> = <span id="wd2">3.6</span></p> </div>
-          <div class="item"> <p>W<sub>D</sub> = <span id="wd3">4.3</span></p> </div>
-          <div class="item"> <p>W<sub>D</sub> = <span id="wd4">4.8</span></p> </div>
+          <div class="item"> <span>W<sub>D</sub> = <span id="wd2">3.6</span></span> </div>
+          <div class="item"> <span>W<sub>D</sub> = <span id="wd3">4.3</span></span> </div>
+          <div class="item"> <span>W<sub>D</sub> = <span id="wd4">4.8</span></span> </div>
         </div>
 
         <div class="item7"> 바닥마감<br>(고정하중)</div>
@@ -350,26 +351,16 @@
                 <mo>&PlusMinus;</mo>
                 <msqrt>
                   <mrow>
-                    <msup>
-                      <mi>b</mi>
-                      <mn>2</mn>
-                    </msup>
+                    <msup><mi>b</mi><mn>2</mn></msup>
                     <mo>-</mo>
                     <mrow>
-                      <mn class="egogo"></mn><mn>·</mn>
-                      <mo>&InvisibleTimes;</mo>
-                      <mi>a</mi><mn>·</mn>
-                      <mo>&InvisibleTimes;</mo>
-                      <mi>c</mi>
+                      <mn class="egogo"></mn><mn>·</mn><mi>a</mi><mn>·</mn><mi>c</mi>
                     </mrow>
                   </mrow>
                 </msqrt>
               </mrow>
               <mrow>
-                <mn class="result"></mn>
-                <mo>&InvisibleTimes;</mo>
-                <mn>·</mn>
-                <mi>a</mi>
+                <mn class="result"></mn><mn>·</mn><mi>a</mi>
               </mrow>
             </mfrac>
           </mrow>
