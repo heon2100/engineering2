@@ -100,6 +100,12 @@ function calCulate(){
   document.getElementById('axDis_2').innerHTML = input[2];
   document.getElementById('wEI').innerHTML = ((input[1]*input[6])/(2*input[2]*input[5])*1000000).toFixed(1);
 
+  document.getElementById('eqContact_3').innerHTML = input[5];
+  document.getElementById('axDis_3').innerHTML = input[2];
+  document.getElementById('eqWidth_3').innerHTML = input[3];
+  document.getElementById('axDis_4').innerHTML = input[2];
+  document.getElementById('eq_C_3').innerHTML = ((2*input[5]*input[2])/(input[3]*input[2])).toFixed(2);
+
 
 
   // 계산한 값들 넣기
