@@ -59,7 +59,9 @@ function calCulate(){
     input.splice(6,0, 1.4);;
   }
 
-  let bmi = Number(input[2])/(Number(input[1])/100*Number(input[1])/100);
+
+  //------ 이거 이제 이해함 삯제해도 될듯 --------//
+  let bmi = Number(input[2])/(Number(input[5])/100*Number(input[8])/100);
 
   let result = '';
   if(bmi<18.5){
@@ -73,11 +75,12 @@ function calCulate(){
   }else if(35<=bmi){
     result = '초과 됨으로 재검토 필요3';
   }
-
+  console.log(bmi)
+  console.log(`${input[0]} 장비하중은 <span id="comment">${result}</span>`)
   resultArea.style.display = "block";
-  document.querySelector(".comment").innerHTML = `${input[0]} 장비하중은 <span id="comment">${result}</span>`;
+  document.querySelector(".comment").innerHTML = `${input[0]} 장비하중은 <span>${result}</span>`;
   document.querySelector("#result").innerHTML = bmi.toFixed(2);
-  document.querySelector(".result").innerHTML = bmi.toFixed(2);
+ //------ 이거 이제 이해함 삯제해도 될듯 --------//
 
 
   // 여기가 테이블에 입력값 넣는 거임.
