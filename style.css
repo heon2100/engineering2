@@ -184,13 +184,20 @@ body > main {
   grid-area: 7 / 1 / 9 / 2;
   display: grid;
   grid-template-columns: 1fr 4fr;
+
 }
 .table1 .item3-5 {
   grid-area: 9 / 1 / 14 / 2;
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
-
+.table1 .item3-5 .item3-5-2{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+.table1 .item3-5 .item3-5-2 .item span{
+ text-align: left;
+}
 
 
 .table1 .item4 {
@@ -236,6 +243,8 @@ body > main {
   justify-content: flex-start;
   text-align: left;
   }
+
+
 
 .table1 .item6 {
   grid-area: 19 / 1 / 21 / 2;
@@ -772,7 +781,7 @@ button.calculate:hover {
   border: 0.06rem solid #888;
   width: 500px;
   border-radius: 10px;
-  box-shadow: #393c76 -0.06rem 2px 2px 0.06rem;
+  box-shadow: var(--color1) -0.06rem 2px 2px 0.06rem;
 }
 #modalText {
   padding-top: 8px;
