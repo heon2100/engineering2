@@ -332,7 +332,7 @@ body > footer {
 
 h1 {
   font-size: 1.2rem;
-  margin-top: 1rem;
+  margin-top: 1em;
 }
 
 h2 {
@@ -357,10 +357,10 @@ mn {
 
 .container1 {
   background: var(--bg-color-trans);
-  box-shadow: 0 0 1rem 0 var(--shadow-color);
+  box-shadow: 0 0 1em 0 var(--shadow-color);
   border-radius: 0.4rem;
   margin: 0.3rem 0;
-  padding: 0.6rem 0;
+  padding: 0.6em 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -377,12 +377,12 @@ mn {
 }
 .container3 {
   align-items:flex-start;
-  margin: 0.2rem 0.4rem;
+  margin: 0.2em 0.4em;
   display:flex;
   justify-content:space-between;
 }
 .container4 {
-  margin: 0.2rem 0.4rem;
+  margin: 0.2em 0.4em;
   display:flex;
   flex-direction: column;
 }
@@ -429,7 +429,7 @@ mn {
 .var1 {
   flex-shrink:0;
   width: 110px;
-  height: 1.4rem;
+  height: 1.4em;
   color: var(--text-color-b);
   margin-right: 0.5rem;
   overflow: hidden;
@@ -442,7 +442,7 @@ mn {
 .var2 {
   flex-shrink:0;
   width: 50px;
-  height: 1.4rem;
+  height: 1.4em;
   color: var(--text-color-b);
   margin-right: 0.5rem;
   overflow: hidden;
@@ -458,7 +458,7 @@ mn {
   outline: none;
   border: none;
   border-radius: 0.3rem;
-  margin-top: 0.1rem;
+  margin-top: 0.1em;
   border-bottom: 0.06rem solid var(--color2);
   text-align: center;
 }
@@ -525,7 +525,7 @@ button.calculate {
   cursor: pointer;
   color: var(--text-color-d);
   background: var(--color1);
-  box-shadow: 0 0 1rem 0 var(--shadow-color);
+  box-shadow: 0 0 1em 0 var(--shadow-color);
   border-radius: 0.4rem;
   padding: 0.6rem;
   margin-bottom: 0.5rem;
@@ -586,7 +586,7 @@ button.calculate:hover {
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
-  box-shadow: 0 0 1rem 0 var(--shadow-color);
+  box-shadow: 0 0 1em 0 var(--shadow-color);
   width:60%;
 }
 
@@ -597,6 +597,7 @@ button.calculate:hover {
 .select-selected {
   background-color: var(--color1);;
   border-radius: 5px;
+  font-size: 1em;
 }
 .select-selected:hover {
   background-color: var(--color2);;
@@ -607,8 +608,8 @@ button.calculate:hover {
 .select-selected:after {
   position: absolute;
   content: "";
-  top: 14px;
-  right: 10px;
+  top: 0.9em;
+  right: 0.8em;
   width: 0;
   height: 0;
   border: 6px solid transparent;
@@ -636,6 +637,7 @@ button.calculate:hover {
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
   user-select: none;
+  font-size: 1em;
   
 }
 
@@ -648,6 +650,7 @@ button.calculate:hover {
   right: 0;
   z-index: 99;
   border-radius: 10px;
+  font-size: 1em;
 }
 
 /*hide the items when the select box is closed:*/
@@ -662,6 +665,7 @@ button.calculate:hover {
 
 .same-as-selected {
   background-color: var(--bg-color-trans);
+
 }
 /*---↑------------------↑----------------------------------------*/
 
@@ -675,7 +679,7 @@ button.calculate:hover {
   align-content: center;
   background: var(--bg-color-trans);
   box-shadow: 0px 0px 95px -30px var(--shadow-color);
-  border-radius: 0.6rem;
+  border-radius: 0.6em;
   padding: 10px 0;
 }
 .choices .container {
@@ -786,7 +790,7 @@ button.calculate:hover {
 .close {
   color: var(--color1);
   float: right;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
@@ -830,12 +834,18 @@ button.calculate:hover {
     align-items: center;
   }
 
+  .container1 {
+    padding:2% 2%;
+  }
+
   .box_title{
     font-size: 6vw;
   }
   h1 {
     font-size: 16px;
   }
+
+
 
   .box1, .box2 {
     width: 96%;  
@@ -851,18 +861,28 @@ button.calculate:hover {
 
   .custom-select {
     width:100%;
+    font-size: 16px;
   }
+
 
   .choices {
     width:100%;
+    padding:2% 2%;
   }
   .choices .container {
     padding:0 0 0 25px;
   }
+  .choices .container p {
+    font-size: 16px;
+  }
+
+  
   .checkmark {
     height: 16px;
     width: 16px;
+    
   }
+
   .var1, .var2,
   input {
     font-size: 16px;
@@ -882,12 +902,18 @@ button.calculate:hover {
   .content2,
   .content3 {
     width:100%;
-    padding-bottom: 1%;
+  }
+  .content1 div, 
+  .content2 div,
+  .content3 div {
     font-size: 16px;
   }
 
+  .calculate {
+    font-size: 16px;
+  }
   .modal-content {
-    width:400px;
+    width:80%;
   }
 
 
