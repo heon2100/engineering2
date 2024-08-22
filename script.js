@@ -106,6 +106,12 @@ function calCulate(){
   document.getElementById('axDis_4').innerHTML = input[2];
   document.getElementById('eq_C_3').innerHTML = ((2*input[5]*input[2])/(input[3]*input[2])).toFixed(2);
 
+  document.getElementById('dis1').innerHTML = input[3];
+  document.getElementById('dis2').innerHTML = input[2];
+  document.getElementById('dis3').innerHTML = input[5];
+  document.getElementById('dis4').innerHTML = input[5];
+
+
 
 
   // 계산한 값들 넣기
