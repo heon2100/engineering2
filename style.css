@@ -199,6 +199,42 @@ body > main {
  text-align: left;
 }
 
+#dis1 {
+  position: absolute;
+  bottom: 4.5rem;
+  left: 0.9rem;
+  transform: rotate( -90deg );
+  font-size: 0.8rem;
+}
+#dis2 {
+  position: absolute;
+  top: 0rem;
+  right: 8.3rem;
+  font-size: 0.8rem;
+}
+#dis3 {
+  position: absolute;
+  top: 2.4rem;
+  right: 3.5rem;
+  transform: rotate( -90deg );
+  font-size: 0.8rem;
+}
+#dis4 {
+  position: absolute;
+  top: 5.5rem;
+  right: 3.5rem;
+  transform: rotate( -90deg );
+  font-size: 0.8rem;
+}
+#pic {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 4.5rem;
+}
+
+
+
+
 
 .table1 .item4 {
   grid-area: 12 / 1 / 14 / 2;
@@ -286,6 +322,7 @@ justify-content: flex-start;
 .table1 .item8 .item{
   text-align: left;
   justify-content: flex-start;
+
   }
 
 
@@ -296,7 +333,9 @@ justify-content: flex-start;
   text-align: center;
   justify-content: center;
   align-items: center;
+
 }
+
 .itemEq {
   border: var(--tableborder);
   padding: 0 0.5rem;
