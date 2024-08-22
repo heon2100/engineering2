@@ -167,7 +167,7 @@
         
 
       <!---------↓ 계산 버튼 ↓-------------------------------------------------------------->  
-      <button class="calculate" id="submit" onclick="inputCheck();">Calculate 장비하중
+      <button class="calculate" id="submit" onclick="inputCheck();"> '설계하중표' 산출
       </button>
       <!---------↑ 계산 버튼 ↑----------------------------------------------------------->
         
@@ -260,8 +260,12 @@
           <div class="item3-5"> 
             <div class="item"> 하중집중율 </div>
             <div class="item3-5-2">        
-              <div class="item" style="background-image:url('images/eq_plan.png');background-size : contain;">        
-              
+              <div class="item" style="background-image:url('images/eq_plan.png');background-size : contain; position: relative;">        
+                <div id="dis1">2990</div>
+                <div id="dis2">3600</div>
+                <div id="dis3">600</div>
+                <div id="dis4">600</div>
+                <div id="pic"> (장비평면도) </div>
               </div>
               <div class="item">      
                 <span> 접 지 율 =<br>
