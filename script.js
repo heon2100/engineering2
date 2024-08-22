@@ -111,7 +111,7 @@ function calCulate(){
   // 계산한 값들 넣기
 
   let ws = input[7]*input[8]*input[9];
-  document.getElementById('ws').innerHTML = ws;
+  document.getElementById('ws').innerHTML = ws.toFixed(2);
   console.log(input[7],input[8], input[9])
 
 
