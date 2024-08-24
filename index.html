@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -95,11 +96,11 @@
             </label>
           </div>
         </div>
-        
+
 
       </div>
       <!---------↑ 장비재원 선택하기 ↑----------------------------------------------------------->
-        
+
       <!---------↓ 해체 잔재물 입력 ↓-------------------------------------------------------------->
       <h1>· 해체 잔재물</h1>
       <div class="container1">
@@ -184,26 +185,26 @@
       <h1>· 국토교통부 "해체계획서 작성가이드" 기준 '설계하중표' </h1>
 
       <div class="table1">
-        <div class="item1"> 설계하중표 (장비탑재 공법) </div>
+        <div class="item1"> <span>설계하중표 (장비탑재 공법)</span> </div>
 
-        <div class="item2"> 하중종류 </div>
-        <div class="item2-1"> 하중 상세 내용 </div>
+        <div class="item2"> <span>하중종류</span> </div>
+        <div class="item2-1"> <span>하중 상세 내용</span> </div>
 
-        <div class="item3"> 장비하중 <br> (활하중) </div>
-        <div class="item3-0"> 
+        <div class="item3"> <span>장비하중 <br> (활하중)</span></div>
+        <div class="item3-0">
           <div class="item3-1"> 
-            <div class="item"> 장 비 명: </div>
+            <div class="item"> <span>장 비 명:</span> </div>
             <div class="item"> <span id="out_eqName"></span> </div>
-            <div class="item"> 장비중량: </div>
-            <div class="item"> <span id="out_eqWeight"></span>kN </div>
+            <div class="item"> <span>장비중량:</span> </div>
+            <div class="item"> <span id="out_eqWeight"></span><span>kN</span> </div>
           </div>
           <div class="item3-2"> 
-            <div class="item3-2-1"> 장비제원: <br><br> (mm) </div>
-            <div class="item3-2-2">        
-              <div class="item">  텀블러 <br> 중심간 거리</div>
-              <div class="item">  전 폭  </div>
-              <div class="item">  전 고  </div>
-              <div class="item">  슈 폭  </div>
+            <div class="item3-2-1"> <span>장비제원: <br><br> (mm) </span> </div>
+            <div class="item3-2-2">
+              <div class="item"> <span>텀블러 <br> 중심간 거리</span></div>
+              <div class="item"> <span> 전 폭 </span> </div>
+              <div class="item"> <span> 전 고 </span> </div>
+              <div class="item"> <span> 슈 폭 </span> </div>
               <div class="item"> <span id="out_axDis"></span> </div>
               <div class="item"> <span id="out_eqWidth"></span> </div>
               <div class="item"> <span id="out_eqLength"></span> </div>
@@ -211,7 +212,7 @@
             </div>
           </div>
           <div class="item3-3"> 
-            <div class="item"> 장비단위하중 <br>(등분포하중) </div>
+            <div class="item"> <span>장비단위하중 <br>(등분포하중)</span> </div>
             <div class="itemEq">
               <math>
                 <mrow>
@@ -229,14 +230,14 @@
                   <mn id="wEW"></mn><mi>k</mi><mi>N</mi><mi>/</mi><msup><mi>m</mi><mn>2</mn></msup>
                 </mrow>
               </math> 
-            <div> *충격계수 =&nbsp;<mn id="impact"> </mn> </div> 
+            <div> <span>*충격계수 =&nbsp;<mn id="impact"> </mn></span> </div> 
           </div>
 
 
 
           </div>
           <div class="item3-4"> 
-            <div class="item"> 장비단위하중 <br>(선하중) </div>
+            <div class="item"> <span>장비단위하중 <br>(선하중)</span> </div>
             <div class="itemEq">        
               <math>
                 <mrow>
@@ -258,16 +259,16 @@
             </div>
           </div>
           <div class="item3-5"> 
-            <div class="item"> 하중집중율 </div>
+            <div class="item"> <span>하중집중율</span> </div>
             <div class="item3-5-2">        
-              <div class="item" style="background-image:url('images/eq_plan.png');background-size : contain; position: relative;">        
-                <div id="dis1"></div>
-                <div id="dis2"></div>
-                <div id="dis3"></div>
-                <div id="dis4"></div>
-                <div id="pic"> (장비평면도) </div>
+              <div class=".con_rate">        
+                <div> <span id="dis1"></span> </div>
+                <div> <span id="dis2"></span> </div>
+                <div> <span id="dis3"></span> </div>
+                <div> <span id="dis4"></span> </div>
+                <div id="pic"> <span>(장비평면도)</span> </div>
               </div>
-              <div class="item">      
+              <div class="item">
                 <span> 접 지 율 =<br>
                   <math>
                     <mrow>
@@ -289,52 +290,54 @@
           </div>
         </div>
 
-        <div class="item4"> 해체<br>잔재물<br>(활하중) </div>
+        <div class="item4"> <span>해체<br>잔재물<br>(활하중)</span> </div>
         <div class="item4-1"> 
-          <div class="item"> 잔재물 높이<br>(m) </div>
-          <div class="item"> 잔재물 비중<br>(kN/㎥) </div>
-          <div class="item"> 공극률<br>(잔재물 밀실도) </div>
-          <div class="item"> 단위하중<br>(kN/㎡) </div>            
+          <div class="item"> <span>잔재물 높이<br>(m)</span> </div>
+          <div class="item"> <span>잔재물 비중<br>(kN/㎥)</span> </div>
+          <div class="item"> <span>공극률<br>(잔재물 밀실도)</span> </div>
+          <div class="item"> <span>단위하중<br>(kN/㎡)</span> </div>            
           <div class="item"> <span id="out_db_Height"></span> </div>
           <div class="item"> <span id="out_db_Density"></span> </div>
           <div class="item"> <span id="out_db_Porosity"></span> </div>
           <div class="item"> <span>W<sub>s</sub> =&nbsp;<span id="ws"></span></span> </div>
         </div>
 
-        <div class="item5"> 해체<br>잔재물 비중<br>(kN/㎥) </div>
+        <div class="item5"> <span>해체<br>잔재물 비중<br>(kN/㎥)<span> </div>
         <div class="item5-1"> 
-          <div class="item"> 일반라멘조 및 콘크리트 벽식구조</div>
-          <div class="item"> 콘크리트벽식구조와 비내력 조적벽체구조</div>            
+          <div class="item"> <span>일반라멘조 및 콘크리트 벽식구조</span></div>
+          <div class="item"> <span>콘크리트벽식구조와 비내력 조적벽체구조</span></div>            
           <div class="item"> <span>콘크리트(23) x <span>0.7</span> = <span>16.1</span> <br >몰탈(20) x 0.2 = 4.0<br> 벽돌 및 타일(18) x 0.1 = 1.8 </span></div>
           <div class="item"> <span>콘크리트(23) x <span>0.6</span> = <span>13.8</span><br>몰탈(20) x 0.2 = 4.0<br> 벽돌 및 타일(18) x 0.2 = 3.6 </span></div>
-          <div class="item"> 합계:&nbsp;<span>21.9</span>kN/㎥ </div>
-          <div class="item"> 합계:&nbsp;<span>21.4</span>kN/㎥ </div>
+          <div class="item"> <span>합계:&nbsp;<span>21.9</span>kN/㎥</span> </div>
+          <div class="item"> <span>합계:&nbsp;<span>21.4</span>kN/㎥</span> </div>
         </div>
         <div class="item5-2"> 
-          <div class="item"> * 순수 콘크리트의 해체 잔재물인 경우는 비중 = 23 을 적용 </div>
+          <div class="item"> <span>* 순수 콘크리트의 해체 잔재물인 경우는 비중 = 23 을 적용</span> </div>
         </div>
 
-        <div class="item6"> 자 중<br>(고정하중)<br>(kN/㎡) </div>
+        <div class="item6"> <span>자 중<br>(고정하중)<br>(kN/㎡)</span> </div>
         <div class="item6-1"> 
-          <div class="item"> 두께 = <span id="out_thk1"></span> </div>
-          <div class="item"> 두께 = <span id="out_thk2"></span> </div>
-          <div class="item"> 두께 = <span id="out_thk3"></span> </div>
-          <div class="item"> 두께 = <span id="out_thk4"></span> </div>
+          <div class="item"> <span>두께 =</span> <span id="out_thk1"></span> </div>
+          <div class="item"> <span>두께 =</span> <span id="out_thk2"></span> </div>
+          <div class="item"> <span>두께 =</span> <span id="out_thk3"></span> </div>
+          <div class="item"> <span>두께 =</span> <span id="out_thk4"></span> </div>
           <div class="item"> <span>W<sub>D</sub> = <span id="wd1">2.9</span></span> </div>            
           <div class="item"> <span>W<sub>D</sub> = <span id="wd2">3.6</span></span> </div>
           <div class="item"> <span>W<sub>D</sub> = <span id="wd3">4.3</span></span> </div>
           <div class="item"> <span>W<sub>D</sub> = <span id="wd4">4.8</span></span> </div>
         </div>
 
-        <div class="item7"> 바닥마감<br>(고정하중)</div>
+        <div class="item7"> <span>바닥마감<br>(고정하중)</span> </div>
         <div class="item7-1"> 
           <div class="item"> <span> W<sub>F</sub> = 0.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 바닥 마감몰탈(T=30)이 남아 있는 경우 적용할 것. </span></div>
         </div>
         <div class="item8">
           <div class="item">
-            주기<br>
-            1. 해체잔재물의 공극율은 잔재물의 종류에 따라 0.7~1.0을 적용한다.<br>
-            2. 바닥 마감하중 현장조사된 마감의 비중과 두께를 고려한다.
+            <span>
+              주기<br>
+              1. 해체잔재물의 공극율은 잔재물의 종류에 따라 0.7~1.0을 적용한다.<br>
+              2. 바닥 마감하중 현장조사된 마감의 비중과 두께를 고려한다.
+            </span>
           </div>
         </div>
 
@@ -359,49 +362,7 @@
     <!--------↓  삭제할 구간입니다  ↓--------------------------------------->
   
     <div class="box2">
-      <div class="box_title">O U T P U T</div>
-
-      <div class="result">
-        <math>
-          <mrow>
-            <mi>x</mi>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mrow>
-                  <mo>-</mo><mo class="op1"></mo>
-                  <mi>s</mi><mi>i</mi><mi>n</mi><mn>·</mn><mi>𝜙</mi>
-                </mrow>
-                <mo>&PlusMinus;</mo>
-                <msqrt>
-                  <mrow>
-                    <msup><mi>b</mi><mn>2</mn></msup>
-                    <mo>-</mo>
-                    <mrow>
-                      <mn class="egogo">4</mn><mn>·</mn><mi>a</mi><mn>·</mn><mi>c</mi>
-                    </mrow>
-                  </mrow>
-                </msqrt>
-              </mrow>
-              <mrow>
-                <mn>2</mn><mn>·</mn><mi>a</mi>
-              </mrow>
-            </mfrac>
-            <mo>=</mo>
-            <mi class="result"></mi>
-            
-          </mrow>
-        </math>
-        <p>사용장비하중은 다음과 같습니다.</p>
-        <div id="result">00.00</div>
-        <p class="comment"></p>
-      </div>
-
-
-    </div>
-
-    <div class="box2">
-      <h1>원하는 결과물</h1>
+      <h1>국토교통부 지침서 상 실제표 (비교용) </h1>
       <img src="images/목표결과페이지.jpg">
     </div>
     <!----------------↑ 삭제할 구간 입니다. ↑------------------------------>
