@@ -4,7 +4,7 @@ let eqWidth = document.getElementById("eqWidth");
 let impact1 = document.getElementById("impact1");
 let impact2 = document.getElementById("impact2");
 var form = document.getElementById("form");
-let resultArea = document.querySelector(".comment");
+let resultArea = document.querySelector(".box2");
 
 var modalContent = document.querySelector(".modal-content");
 var modalText = document.querySelector("#modalText");
@@ -101,6 +101,11 @@ function calCulate(){
   for (let i=0; i<4; i++) {
     document.getElementById(`wd${i+1}`).innerHTML = input[10+i]*24/1000;
   }
+
+
+  // 결과값 보이기
+
+  resultArea.style.opacity = "1";
 
 
 }
