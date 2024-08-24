@@ -96,10 +96,23 @@ body > main {
   margin: 0.6rem;
   padding: 0.6rem;
   color:var(--text-color-b);
+  opacity:0 ;
+  transition: all, 0.5s ease-in;
 }
+
+
+
+
+
 .box2 > img {
   width: 100%;
 }
+
+
+
+
+
+
 
 /*------↓ OUTPUT TABLE ↓-------------------------------------*/
 .table1 {    /*---A4 size in pixel: 	2480px x 3508px --*/
@@ -548,9 +561,9 @@ button.calculate {
   color: var(--text-color-d);
   background: var(--color1);
   box-shadow: 0 0 1em 0 var(--shadow-color);
-  border-radius: 0.4rem;
-  padding: 0.6rem;
-  margin-bottom: 0.5rem;
+  border-radius: 0.4em;
+  padding: 0.6em;
+  margin-bottom: 0.5em;
   width: 100%;
   outline: none;
   border: none;
@@ -790,9 +803,26 @@ button.calculate:hover {
 
 .printtb {
   width: 100%;
-  height: 1.2rem;
-
+  display: flex;
+  justify-content: center;
+  border:#1E1E1D;
+  border-radius: 0.5em;
+  cursor: pointer;
+  color: var(--text-color-d);
+  background: var(--color1);
+  box-shadow: 0 0 1em 0 var(--shadow-color);
+  border-radius: 0.4em;
+  padding: 0.3em;
+  outline: none;
+  border: none;
+  transition: all, 0.5s;
+  font-size: 16px;
+  margin: 0 0.3em;
 }
+.printtb:hover {
+  background: var(--color2);
+}
+
 
 /*-----↑ print screen ↑ ------------------------------*/
 
