@@ -1,5 +1,4 @@
 /* Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 /*  font-family: "Noto Sans KR", sans-serif;  -*/
 
@@ -27,7 +26,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 body {
@@ -319,7 +318,7 @@ body > main {
   display: grid;
   align-items: left;
 }
-.table1 .item7-1 .item{
+.table1 .item7-1 .item {
 justify-content: flex-start;
 }
 
@@ -330,19 +329,28 @@ justify-content: flex-start;
 .table1 .item8 .item{
   text-align: left;
   justify-content: flex-start;
+}
 
-  }
 
-
-.item{
+.item {
   border: var(--tableborder);
-  padding: 0 0.5rem;
+  padding: 0 0.5em;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-
 }
+
+
+.item_nopad {
+  border: var(--tableborder);
+  padding: 0 0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .itemEq {
   border: var(--tableborder);
