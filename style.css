@@ -1,18 +1,18 @@
 /* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/*  font-family: "Noto Sans KR", sans-serif;  -*/
 
-
-
-/* ------↓ Color Control Here ↓-----------------*/
+/* ------↓ Color Control Here ↓----------https://colorpalettes.net/-------*/
 :root {
-  --color1:#43640b;
-  --color2:#80a71a;
-  --color3:#afca54;
-  --color4:#d3dcc8;
-  --color5:#a4bfd1;
+  --color1:#1E1E1D;   /*---Color Palette #4584*----*/
+  --color2:#685F59;
+  --color3:#41565B;
+  --color4:#778B8F;
+  --color5:#D8CAC1;
   --text-color-b:rgba(40, 40, 40, 0.8);
   --text-color-d:#fefefe;
-  --accent-color:rgba(255, 0, 0, 0.82);
+  --accent-color:rgba(58, 26, 26, 0.82);
   --bg-color-trans:#ffffff80;
   --shadow-color:rgba(0, 0, 0, 0.15);
 
@@ -27,13 +27,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
   font-family: 'Poppins', sans-serif;
 }
 
 body {
+  font-size: 16px;
   min-height: 100vh;
   background: var(--color5);
+  
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr;
@@ -111,7 +112,7 @@ body > main {
   grid-template-rows: 0.8fr 0.8fr repeat(21, 1fr);
   border: var(--tableborder);
   text-align: center;
-  font-size: 2vw;
+  
 }
 .table1 .item1 {
   grid-area: 1 / 1 / 2 / 3;
@@ -199,37 +200,44 @@ body > main {
  text-align: left;
 }
 
+.con_rate {
+  background-image:url('images/eq_plan.png');
+  background-size : contain; 
+  position: relative;
+  font-size:1em;
+  border: var(--tableborder);
+}
 #dis1 {
   position: absolute;
-  bottom: 4.5rem;
-  left: 0.9rem;
+  bottom: 48%;
+  left: 5%;
   transform: rotate( -90deg );
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 #dis2 {
   position: absolute;
-  top: 0rem;
-  right: 8.3rem;
-  font-size: 0.8rem;
+  top: 0%;
+  left: 37%;
+  font-size: 0.8em;
 }
 #dis3 {
   position: absolute;
-  top: 2.4rem;
-  right: 3.5rem;
+  top: 25%;
+  right: 20%;
   transform: rotate( -90deg );
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 #dis4 {
   position: absolute;
-  top: 5.5rem;
-  right: 3.5rem;
+  top: 56%;
+  right: 20%;
   transform: rotate( -90deg );
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 #pic {
   position: absolute;
-  bottom: 0.5rem;
-  left: 4.5rem;
+  bottom: 5%;
+  left: 30%;
 }
 
 
@@ -351,7 +359,14 @@ justify-content: flex-start;
 
 
 
-body > footer {
+
+
+
+
+
+
+
+footer {
   position: sticky;
   bottom: 0;
   background: var(--color1);
@@ -507,58 +522,9 @@ mn {
   border: none;
   border-radius: 0.3rem;
   margin-top: 0.1em;
-  border-bottom: 0.06rem solid var(--color2);
+  border-bottom: 0.1em solid var(--color2);
   text-align: center;
-}
-
-
-.inputH {
-  background: var(--bg-color-trans);
-  box-shadow: 0px 0px 95px -30px var(--shadow-color);
-  border-radius: 12px;
-  padding: 10px 0;
-  margin-bottom: 20px;
-  margin-right: 20px;
-}
-.inputH label {
-  display: block;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-color-b);;
-  margin-bottom: 20px;
-}
-.inputH input {
-  outline: none;
-  border: none;
-  border-bottom: 0.06rem solid var(--color2);
-  width: 50%;
-  text-align: center;
-  font-size: 18px;
-  font-family: "Nunito", sans-serif;
-}
-
-.inputW {
-  background: var(--bg-color-trans);
-  box-shadow: 0px 0px 95px -30px var(--shadow-color);
-  border-radius: 12px;
-  padding: 10px 0;
-  margin-bottom: 20px;
-}
-.inputW label {
-  display: block;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-color-b);
-  margin-bottom: 20px;
-}
-.inputW input {
-  outline: none;
-  border: none;
-  border-bottom: 0.06rem solid var(--color2);
-  width: 50%;
-  text-align: center;
-  font-size: 18px;
-  font-family: "Nunito", sans-serif;
+  font-size: 16px;
 }
 
 
@@ -581,51 +547,13 @@ button.calculate {
   outline: none;
   border: none;
   transition: all 0.5s;
+  font-size: 16px;
 }
 button.calculate:hover {
   background: var(--color2);
 }
 /*--------↑ Calculate BUtton ↑----------------------*/
 
-
-/*-------↓ RESULT ↓---------------------*/
-.result {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.6rem 1.2rem;
-}
-.result p {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: var(--text-color-b);
-  margin-bottom: 1.0rem;
-}
-.result #result {
-  font-size: 36px;
-  font-weight: 900;
-  color: var(--color1);
-  background-color: var(--bg-color-trans);
-  display: inline-block;
-  padding: 7px 20px;
-  border-radius: 55px;
-  margin-bottom: 25px;
-}
-
-#comment {
-  color: var(--color1);
-  font-weight: 800;
-}
-.comment {
-  display: none;
-  border: dashed 0.06rem;
-  border-radius: 7px;
-  padding: 5px;
-}
-.comment:hover {
-  color: var(--text-color-b);
-}
-/*--------↑ RESULT ↑----------------------*/
 
 
 
@@ -637,13 +565,12 @@ button.calculate:hover {
   box-shadow: 0 0 1em 0 var(--shadow-color);
   width:60%;
 }
-
 .custom-select select {
   display: none; /*hide original SELECT element:*/
 }
 
 .select-selected {
-  background-color: var(--color1);;
+  background-color: var(--color3);;
   border-radius: 5px;
   font-size: 1em;
 }
@@ -669,12 +596,13 @@ button.calculate:hover {
   border-color: transparent transparent #fff transparent;
   top: 7px;
 }
-.select-selected:focus{ /*이거 왜 안먹히냐.. */
-  border: 0.06rem solid var(--accent-color);
+.select-selected:focus{
+  border: 0.6em solid var(--accent-color);
   box-sizing: border-box;
   border-radius: 10px;
-  outline: 3px solid var(--color4);
+  outline: 3px solid var(red);
   border-radius: 10px;
+  background-color: var(--color5);
 }
 
 /*style the items (options), including the selected item:*/
@@ -686,13 +614,12 @@ button.calculate:hover {
   cursor: pointer;
   user-select: none;
   font-size: 1em;
-  
 }
 
 /*목록을 확장했을 시 style items (options):*/
 .select-items {
   position: absolute;
-  background-color: var(--color2);
+  background-color: var(--color4);
   top: 100%;
   left: 0;
   right: 0;
@@ -707,12 +634,12 @@ button.calculate:hover {
 }
 
 .select-items div:hover {
-  background-color: var(--color1);
+  background-color: var(--color3);
   transition: all 0.5s;
 }
 
 .same-as-selected {
-  background-color: var(--bg-color-trans);
+  background-color: var(--color2);
 
 }
 /*---↑------------------↑----------------------------------------*/
@@ -869,9 +796,7 @@ button.calculate:hover {
 /*----------------↓ MOBILE MODE ↓--------------------*/
 
 @media (max-width: 500px) {
-  * {
-    font-size: 2vw;
-  }
+
   header {
     padding: 0.6rem 1.0rem;
     
@@ -941,6 +866,7 @@ button.calculate:hover {
     align-items: stretch;
     justify-content: space-around;
   }
+
   .container4,
   .container5 {
     width: 100%;
@@ -954,15 +880,19 @@ button.calculate:hover {
   .content1 div, 
   .content2 div,
   .content3 div {
-    font-size: 16px;
+    font-size: 1em;
   }
 
-  .calculate {
-    font-size: 16px;
-  }
+
   .modal-content {
     width:80%;
   }
+  
+  .table1 span, math, .con_rate{
+    font-size: 2vw;
+  }
+
+
 
 
 }
