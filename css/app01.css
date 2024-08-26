@@ -17,10 +17,11 @@
 
   --tableborder: 0.06rem solid black;
 }
-/* -------↑-------------↑----------------------------------*/
+/* -------↑---------------↑--------------------------------*/
 
 
-/*--------↓---------------↓-------------------------------*/
+
+/*--======↓               ↓==============================--*/
 
 * {
   margin: 0;
@@ -45,6 +46,7 @@ body {
 
 body > header {
   height: 3.5rem;
+  grid-area: header;
 }
 
 body > main {
@@ -62,11 +64,12 @@ body > footer {
   position: sticky;
   bottom: 0;
   background: var(--color1);
-  padding: 0.3rem 1.0rem;
+  padding: 0.3rem 1.5rem;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   clear: both;
   align-items: center;
+  grid-area: footer;
 }
 
 .footer-text {
@@ -76,13 +79,35 @@ body > footer {
   font-size: 0.8rem;
   transition: all 0.5;
 }
+/* -------↑---------------↑--------------------------------*/
 
 
 
+/*--======↓  기타 컨텐츠  ↓==============================--*/
+
+h1 {
+  font-size: 1.2rem;
+  margin-top: 1em;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+a {
+  vertical-align:middle;
+}
+
+/* 계산식 값 ------*/
+mn {
+  font-family: "Cambria Math";
+}
+
+/*------------↑--------------↑---------------------------*/
 
 
 
-
+/*--======↓  MAI 컨텐츠  ↓==============================--*/
 
 .box_title {
   display: block;
@@ -399,38 +424,12 @@ justify-content: flex-start;
 
 
 
-
-
-
-
-
-
 /*----------↑--------------↑-----------------------------*/
 
 
 
 
-/*--------------↓ 기타 컨텐츠 ↓---------------------------*/
 
-h1 {
-  font-size: 1.2rem;
-  margin-top: 1em;
-}
-
-h2 {
-  font-size: 1.2rem;
-}
-
-a {
-  vertical-align:middle;
-}
-
-/* 계산식 값 ------*/
-mn {
-  font-family: "Cambria Math";
-}
-
-/*------------↑--------------↑---------------------------*/
 
 
 
@@ -835,11 +834,13 @@ button.calculate:hover {
 /*----------------↓ MOBILE MODE ↓--------------------*/
 
 @media (max-width: 500px) {
-
-  header {
-    padding: 0.6rem 1.0rem;
-    
+  body > header{
+    height: 2.5em;
   }
+  .header {
+    padding: 0.6rem 1.0rem 0.6rem 1.0rem;
+  }
+
   
   .container {
     flex-direction: column;
@@ -938,7 +939,3 @@ button.calculate:hover {
 
 
 /*----------------↑ MOBILE MODE ↑ -------------------*/
-
-
-
-
