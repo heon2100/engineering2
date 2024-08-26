@@ -232,7 +232,7 @@ body > footer {
 }
 
 .con_rate {
-  background-image:url('images/eq_plan.png');
+  background-image:url('../images/eq_plan.png');
   background-size : contain; 
   position: relative;
   font-size:1em;
