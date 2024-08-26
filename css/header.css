@@ -4,7 +4,7 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem;
+  --header-height: 2.5rem;
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
@@ -319,7 +319,7 @@ a {
 @media screen and (min-width: 500px) {
 
   .nav {
-    height: calc(var(--header-height) + 0rem);
+    height: calc(var(--header-height) + 1rem);
     display: flex;
     justify-content: space-between;
   }
