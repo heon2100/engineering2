@@ -3,7 +3,6 @@ let eqWeight = document.getElementById("eqWeight");
 let eqWidth = document.getElementById("eqWidth");
 let impact1 = document.getElementById("impact1");
 let impact2 = document.getElementById("impact2");
-var form = document.getElementById("form");
 let resultArea = document.getElementsByClassName("box2");
 let resultValue = document.getElementsByClassName("outPut");
 let cal =document.getElementsByClassName("calculate")
@@ -32,6 +31,7 @@ function inputCheck(){
 
   }else{
     calCulate();
+
   }
 
 }
@@ -109,8 +109,8 @@ function calCulate(){
     const div = resultArea[i];
     div.style.opacity="1";
   }
-
-
+  // data 모으기
+  collectdata();
 }
 
 
@@ -261,7 +261,7 @@ function inputWindow() {
 }
 
 
-//  테이블 이미지 저장하기
+//===================테이블 이미지 저장하기 ============================
 function downloadImage() {
   // Get the target div
   var divToCapture = document.getElementById('table1');
@@ -277,4 +277,24 @@ function downloadImage() {
     link.download = '설계하중표(장비탑재 공법).png';
     link.click();
   });
+}
+
+
+
+// 엑셀로 저장하는 파일
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx_SrCzUn5i7-JwvdOFJBE20_B2leQu4_UXK0uppSSPLHRIFax6l72jBrXANBYf8Cd0/exec'
+
+// Collect the form data
+
+var keyValuePairs = [ "email=abc@lotte.net", "name=park","gender=male"];
+var formDataString = keyValuePairs.join("&");
+
+function collectdata() {
+
+  fetch(scriptURL, { method: 'POST', body: formDataString})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
 }
