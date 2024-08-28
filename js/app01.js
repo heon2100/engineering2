@@ -4,7 +4,9 @@ let eqWidth = document.getElementById("eqWidth");
 let impact1 = document.getElementById("impact1");
 let impact2 = document.getElementById("impact2");
 var form = document.getElementById("form");
-let resultArea = document.querySelector(".box2");
+let resultArea = document.getElementsByClassName("box2");
+let resultValue = document.getElementsByClassName("outPut");
+let cal =document.getElementsByClassName("calculate")
 
 var modalContent = document.querySelector(".modal-content");
 var modalText = document.querySelector("#modalText");
@@ -63,49 +65,50 @@ function calCulate(){
 
   // 여기가 테이블에 입력값 넣는 거임.
   for (let i=0; i<input.length; i++) {
-    document.getElementById(out[i]).innerHTML = input[i];
+    document.getElementById(out[i]).textContent = input[i];
   }
   // 식 값 넣기.. 같은 숫자는 계속 넣는 방법 없나.. 
-  document.getElementById('eqWeight_1').innerHTML = input[1];
-  document.getElementById('impact_1').innerHTML = input[6];
-  document.getElementById('axDis_1').innerHTML = input[2];
-  document.getElementById('eqWidth_1').innerHTML = input[3];
-  document.getElementById('wEW').innerHTML = ((input[1]*input[6])/(input[2]*input[3])*1000000).toFixed(1);
+  document.getElementById('eqWeight_1').textContent = input[1];
+  document.getElementById('impact_1').textContent = input[6];
+  document.getElementById('axDis_1').textContent = input[2];
+  document.getElementById('eqWidth_1').textContent = input[3];
+  document.getElementById('wEW').textContent = ((input[1]*input[6])/(input[2]*input[3])*1000000).toFixed(1);
 
-  document.getElementById('eqWeight_2').innerHTML = input[1];
-  document.getElementById('impact_2').innerHTML = input[6];
-  document.getElementById('eqContact_2').innerHTML = input[5];
-  document.getElementById('axDis_2').innerHTML = input[2];
-  document.getElementById('wEI').innerHTML = ((input[1]*input[6])/(2*input[2]*input[5])*1000000).toFixed(1);
+  document.getElementById('eqWeight_2').textContent = input[1];
+  document.getElementById('impact_2').textContent = input[6];
+  document.getElementById('eqContact_2').textContent = input[5];
+  document.getElementById('axDis_2').textContent = input[2];
+  document.getElementById('wEI').textContent = ((input[1]*input[6])/(2*input[2]*input[5])*1000000).toFixed(1);
 
-  document.getElementById('eqContact_3').innerHTML = input[5];
-  document.getElementById('axDis_3').innerHTML = input[2];
-  document.getElementById('eqWidth_3').innerHTML = input[3];
-  document.getElementById('axDis_4').innerHTML = input[2];
-  document.getElementById('eq_C_3').innerHTML = ((2*input[5]*input[2])/(input[3]*input[2])).toFixed(2);
+  document.getElementById('eqContact_3').textContent = input[5];
+  document.getElementById('axDis_3').textContent = input[2];
+  document.getElementById('eqWidth_3').textContent = input[3];
+  document.getElementById('axDis_4').textContent = input[2];
+  document.getElementById('eq_C_3').textContent = ((2*input[5]*input[2])/(input[3]*input[2])).toFixed(2);
 
-  document.getElementById('dis1').innerHTML = input[3];
-  document.getElementById('dis2').innerHTML = input[2];
-  document.getElementById('dis3').innerHTML = input[5];
-  document.getElementById('dis4').innerHTML = input[5];
+  document.getElementById('dis1').textContent = input[3];
+  document.getElementById('dis2').textContent = input[2];
+  document.getElementById('dis3').textContent = input[5];
+  document.getElementById('dis4').textContent = input[5];
 
 
 
   // 계산한 값들 넣기
 
   let ws = input[7]*input[8]*input[9];
-  document.getElementById('ws').innerHTML = ws.toFixed(2);
-  console.log(input[7],input[8], input[9])
+  document.getElementById('ws').textContent = ws.toFixed(2);
 
 
   for (let i=0; i<4; i++) {
-    document.getElementById(`wd${i+1}`).innerHTML = input[10+i]*24/1000;
+    document.getElementById(`wd${i+1}`).textContent = input[10+i]*24/1000;
   }
 
 
   // 결과값 보이기
-
-  resultArea.style.opacity = "1";
+  for (let i = 0; i < resultArea.length; i++) {
+    const div = resultArea[i];
+    div.style.opacity="1";
+  }
 
 
 }
