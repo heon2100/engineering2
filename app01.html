@@ -192,21 +192,21 @@
         <div class="item3-0">
           <div class="item3-1"> 
             <div class="item"> <span>장 비 명:</span> </div>
-            <div class="item"> <span id="out_eqName"></span> </div>
+            <div class="item"> <span id="out_eqName" class="outPut"></span> </div>
             <div class="item"> <span>장비중량:</span> </div>
-            <div class="item"> <span id="out_eqWeight"></span><span>kN</span> </div>
+            <div class="item"> <span id="out_eqWeight" class="outPut"></span><span>kN</span> </div>
           </div>
           <div class="item3-2"> 
-            <div class="item3-2-1"> <span>장비제원: </span> <span>(mm)</span> </div>
+            <div class="item3-2-1"> <span>장비제원</span> <span>(mm)</span></div>
             <div class="item3-2-2">
               <div class="item_nopad"> <span>텀블러 <br> 중심간 거리</span></div>
               <div class="item"> <span> 전 폭 </span> </div>
               <div class="item"> <span> 전 고 </span> </div>
               <div class="item"> <span> 슈 폭 </span> </div>
-              <div class="item"> <span id="out_axDis"></span> </div>
-              <div class="item"> <span id="out_eqWidth"></span> </div>
-              <div class="item"> <span id="out_eqLength"></span> </div>
-              <div class="item"> <span id="out_eqContact"></span> </div>
+              <div class="item"> <span id="out_axDis" class="outPut"></span> </div>
+              <div class="item"> <span id="out_eqWidth" class="outPut"></span> </div>
+              <div class="item"> <span id="out_eqLength" class="outPut"></span> </div>
+              <div class="item"> <span id="out_eqContact" class="outPut"></span> </div>
             </div>
           </div>
           <div class="item3-3"> 
@@ -218,17 +218,17 @@
                   <mo>=</mo>
                   <mfrac>
                     <mrow>
-                      <mn id="eqWeight_1"></mn><mo>x</mo><msup><mn id="impact_1"></mn><mo>*</mo></msup>
+                      <mn id="eqWeight_1"></mn><mo>x</mo><msup><mn id="impact_1" class="outPut"></mn><mo>*</mo></msup>
                     </mrow>
                     <mrow>
-                      <mn id="axDis_1"></mn><mo>x</mo><mn id="eqWidth_1"></mn>
+                      <mn id="axDis_1"></mn><mo>x</mo><mn id="eqWidth_1" class="outPut"></mn>
                     </mrow>
                   </mfrac>
                   <mo>=</mo>
                   <mn id="wEW"></mn><mi>k</mi><mi>N</mi><mi>/</mi><msup><mi>m</mi><mn>2</mn></msup>
                 </mrow>
               </math> 
-            <div> <span>*충격계수 =&nbsp;<mn id="impact"> </mn></span> </div> 
+            <div> <math><mo>*충격계수</mo><mo>=</mo><mn id="impact" class="outPut"> </mn></math> </div> 
           </div>
 
 
@@ -243,10 +243,10 @@
                   <mo>=</mo>
                   <mfrac>
                     <mrow>
-                      <mn id="eqWeight_2"></mn><mo>x</mo><msup><mn id="impact_2"></mn><mo>*</mo></msup>
+                      <mn id="eqWeight_2" class="outPut"></mn><mo>x</mo><msup><mn id="impact_2" class="outPut"></mn><mo>*</mo></msup>
                     </mrow>
                     <mrow>
-                      <mn>2</mn><mo>x</mo><mn id="eqContact_2"></mn><mo>x</mo><mn id="axDis_2"></mn>
+                      <mn>2</mn><mo>x</mo><mn id="eqContact_2" class="outPut"></mn><mo>x</mo><mn id="axDis_2" class="outPut"></mn>
                     </mrow>
                   </mfrac>
                   <mo>=</mo>
@@ -260,29 +260,29 @@
             <div class="item"> <span>하중집중율</span> </div>
             <div class="item3-5-2">
               <div class="con_rate">
-                <div> <span id="dis1"></span> </div>
-                <div> <span id="dis2"></span> </div>
-                <div> <span id="dis3"></span> </div>
-                <div> <span id="dis4"></span> </div>
+                <div> <span id="dis1" class="outPut"></span> </div>
+                <div> <span id="dis2" class="outPut"></span> </div>
+                <div> <span id="dis3" class="outPut"></span> </div>
+                <div> <span id="dis4" class="outPut"></span> </div>
                 <div id="pic"> <span>(장비평면도)</span> </div>
               </div>
-              <div class="item">
-                <span> 접 지 율 =<br>
-                  <math>
-                    <mrow>
-                      <mfrac>
-                        <mrow>
-                          <mn>2</mn><mo>x</mo><mn id="eqContact_3"></mn><mo>x</mo><mn id="axDis_3"></mn>
-                        </mrow>
-                        <mrow>
-                          <mn id="eqWidth_3"></mn><mo>x</mo><mn id="axDis_4"></mn>
-                        </mrow>
-                      </mfrac>
-                      <mo>=</mo>
-                      <mn id="eq_C_3"></mn>
-                    </mrow>
-                  </math>
-                </span>
+              <div class="item" style="display:flex; flex-direction:column; gap:0.5em;">
+                <span>접 지 율 =</span>
+                <math>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>2</mn><mo>x</mo><mn id="eqContact_3" class="outPut"></mn><mo>x</mo><mn id="axDis_3" class="outPut"></mn>
+                      </mrow>
+                      <mrow>
+                        <mn id="eqWidth_3" class="outPut"></mn><mo>x</mo><mn id="axDis_4" class="outPut"></mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mn id="eq_C_3" class="outPut"></mn>
+                  </mrow>
+                </math>
+                
               </div>
             </div>
           </div>
@@ -294,10 +294,10 @@
           <div class="item"> <span>잔재물 비중<br>(kN/㎥)</span> </div>
           <div class="item_nopad"> <span>공극률<br>(잔재물 밀실도)</span> </div>
           <div class="item"> <span>단위하중<br>(kN/㎡)</span> </div>      
-          <div class="item"> <span id="out_db_Height"></span> </div>
-          <div class="item"> <span id="out_db_Density"></span> </div>
-          <div class="item"> <span id="out_db_Porosity"></span> </div>
-          <div class="item"> <span>W<sub>s</sub> =&nbsp;<span id="ws"></span></span> </div>
+          <div class="item"> <span id="out_db_Height" class="outPut"></span> </div>
+          <div class="item"> <span id="out_db_Density" class="outPut"></span> </div>
+          <div class="item"> <span id="out_db_Porosity" class="outPut"></span> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>s</mi></msub> <mo>=</mo><mn id="ws" class="outPut"></mn></math> </div>
         </div>
 
         <div class="item5"> <span>해체<br>잔재물 비중<br>(kN/㎥)<span> </div>
@@ -315,19 +315,19 @@
 
         <div class="item6"> <span>자 중<br>(고정하중)<br>(kN/㎡)</span> </div>
         <div class="item6-1">
-          <div class="item"> <span>두께 =</span> <span id="out_thk1"></span> </div>
-          <div class="item"> <span>두께 =</span> <span id="out_thk2"></span> </div>
-          <div class="item"> <span>두께 =</span> <span id="out_thk3"></span> </div>
-          <div class="item"> <span>두께 =</span> <span id="out_thk4"></span> </div>
-          <div class="item"> <span>W<sub>D</sub> = <span id="wd1">2.9</span></span> </div>            
-          <div class="item"> <span>W<sub>D</sub> = <span id="wd2">3.6</span></span> </div>
-          <div class="item"> <span>W<sub>D</sub> = <span id="wd3">4.3</span></span> </div>
-          <div class="item"> <span>W<sub>D</sub> = <span id="wd4">4.8</span></span> </div>
+          <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk1" class="outPut"></span> </div>
+          <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk2" class="outPut"></span> </div>
+          <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk3" class="outPut"></span> </div>
+          <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk4" class="outPut"></span> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wd1" class="outPut"></mn></math> </div>            
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wd2" class="outPut"></mn></math> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wd3" class="outPut"></mn></math> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wd4" class="outPut"></mn></math> </div>
         </div>
 
         <div class="item7"> <span>바닥마감<br>(고정하중)</span> </div>
         <div class="item7-1"> 
-          <div class="item"> <span> W<sub>F</sub> = 0.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 바닥 마감몰탈(T=30)이 남아 있는 경우 적용할 것. </span></div>
+          <div class="item"> <math><msub><mi>W</mi><mi>F</mi></msub><mo>=</mo><mn>0.6</mn></math><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 바닥 마감몰탈(T=30)이 남아 있는 경우 적용할 것. </span></div>
         </div>
         <div class="item8">
           <div class="item">
