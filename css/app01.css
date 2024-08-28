@@ -131,7 +131,7 @@ mn {
   color:var(--text-color-b);
 }
 .box2 {   /*---A4 size in pixel: 	2480px x 3508px --*/
-  width: calc(2480px/3.3);
+  width: calc(2480px/3.4);
   overflow: auto;
   resize: both;
   background: var(--color4);
@@ -143,7 +143,6 @@ mn {
   opacity:0 ;
   transition: all, 0.5s ease-in;
 }
-
 
 
 
@@ -219,8 +218,10 @@ mn {
   grid-area: 1 / 1 / 2 / 2;
   border: var(--tableborder);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap:0.0em;
 }
 .table1 .item3-2 .item3-2-2 {
   grid-area: 1 / 2 / 2 / 6;
@@ -397,6 +398,7 @@ justify-content: flex-start;
   justify-content: center;
   align-items: center;
 }
+
 
 
 .item_nopad {
@@ -583,6 +585,8 @@ button.calculate:hover {
   position: relative;
   box-shadow: 0 0 1em 0 var(--shadow-color);
   width:60%;
+    border-radius: 5px;
+  border-bottom: 0.1em solid var(--color2);
 }
 .custom-select select {
   display: none; /*hide original SELECT element:*/
@@ -592,6 +596,7 @@ button.calculate:hover {
   background-color: var(--color3);;
   border-radius: 5px;
   font-size: 1em;
+
 }
 .select-selected:hover {
   background-color: var(--color2);;
@@ -674,6 +679,7 @@ button.calculate:hover {
   background: var(--bg-color-trans);
   box-shadow: 0px 0px 95px -30px var(--shadow-color);
   border-radius: 0.6em;
+  border-bottom: 0.15em solid var(--color2);
   padding: 10px 0;
 }
 .choices .container {
@@ -731,12 +737,7 @@ button.calculate:hover {
   border-radius: 50%;
   background: var(--color4);
 }
-/* END Style for Radio */
-.containerHW {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 /*------↑ Radio (check box) ↑ -----------------------------------*/
 
 
@@ -849,6 +850,9 @@ button.calculate:hover {
     padding:2% 2%;
   }
 
+  .container2 {
+    gap:0.3rem;
+  }
   .box_title{
     font-size: 6vw;
   }
