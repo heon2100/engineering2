@@ -329,8 +329,6 @@ a {
     top: 3.5rem;
   }
 
-
-
   .nav__toggle {
     display: none;
   }
@@ -366,7 +364,7 @@ a {
     transition: opacity .3s, top .3s;
   }
   .dropdown__usermenu {
-    left: -3rem;
+    left: 0rem;
     top: 4.5rem;
   }
 
