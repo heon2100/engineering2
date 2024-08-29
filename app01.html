@@ -18,7 +18,8 @@
   </header>
 
   <main>
-    
+    <div id="userID" style="display:none;">heonwoo.lee</div>
+
     <!--↓ BOX1: 입력 창 ↓---------------------------------------------------------------------->
     <div class="box1">
       <div class="box_title">I N P U T</div>
@@ -123,8 +124,8 @@
       <!---------↑ 해체 잔재물 입력 ↑----------------------------------------------------------->
 
 
-      <!---------↓ 슬래브 두께 입력 ↓-------------------------------------------------------------->  
-      <h1>· 슬래브 두께</h1>
+      <!---------↓ 슬래브 두께 및 마감 입력 ↓-------------------------------------------------------------->  
+      <h1>· 슬래브 마감</h1>
 
       <div class="container1">
         
@@ -136,17 +137,17 @@
           </div>
           <div class="content3">
             <div class="var2"></div>
-            <div class="inputValue"><input type="number" id="thk2"value="150"/></div>
+            <div class="inputValue"><input type="number" id="thk2" value="150"/></div>
             <div>&nbsp;mm</div>
           </div>
           <div class="content3">
             <div class="var2"></div>
-            <div class="inputValue"><input type="number" id="thk3"value="180"/></div>
+            <div class="inputValue"><input type="number" id="thk3" value="180"/></div>
             <div>&nbsp;mm</div>
           </div>
           <div class="content3">
             <div class="var2"></div>
-            <div class="inputValue"><input type="number" id="thk4"value="210"/></div>
+            <div class="inputValue"><input type="number" id="thk4" value="210"/></div>
             <div>&nbsp;mm </div>
           </div>
         </div>
@@ -157,6 +158,12 @@
             <div class="inputValue"><input type="number" id="fck" value="21"/></div>
             <div>&nbsp;kN/m²</div>
           </div>
+          <div class="content3">
+            <div class="var2"> 몰 탈 aaaaaaaaaaaaaa</div>
+            <div class="inputValue"><input type="number" id="mortar" value="30"/></div>
+            <div>&nbsp;mm</div>
+          </div>
+
         </div>
 
 
@@ -297,7 +304,7 @@
           <div class="item"> <span id="out_db_Height" class="outPut"></span> </div>
           <div class="item"> <span id="out_db_Density" class="outPut"></span> </div>
           <div class="item"> <span id="out_db_Porosity" class="outPut"></span> </div>
-          <div class="item"> <math><msub><mi>W</mi><mi>s</mi></msub> <mo>=</mo><mn id="ws" class="outPut"></mn></math> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>s</mi></msub> <mo>=</mo><mn id="wS" class="outPut"></mn></math> </div>
         </div>
 
         <div class="item5"> <span>해체<br>잔재물 비중<br>(kN/㎥)<span> </div>
@@ -319,15 +326,15 @@
           <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk2" class="outPut"></span> </div>
           <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk3" class="outPut"></span> </div>
           <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk4" class="outPut"></span> </div>
-          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wd1" class="outPut"></mn></math> </div>            
-          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wd2" class="outPut"></mn></math> </div>
-          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wd3" class="outPut"></mn></math> </div>
-          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wd4" class="outPut"></mn></math> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wD1" class="outPut"></mn></math> </div>            
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wD2" class="outPut"></mn></math> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wD3" class="outPut"></mn></math> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wD4" class="outPut"></mn></math> </div>
         </div>
 
         <div class="item7"> <span>바닥마감<br>(고정하중)</span> </div>
         <div class="item7-1"> 
-          <div class="item"> <math><msub><mi>W</mi><mi>F</mi></msub><mo>=</mo><mn>0.6</mn></math><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 바닥 마감몰탈(T=30)이 남아 있는 경우 적용할 것. </span></div>
+          <div class="item"> <math><msub><mi>W</mi><mi>F</mi></msub><mo>=</mo><mn id="wF"></mn></math><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 바닥 마감몰탈(T=<span id="out_mortar"></span>)이 남아 있는 경우 적용할 것. </span></div>
         </div>
         <div class="item8">
           <div class="item">
@@ -393,15 +400,22 @@
 
 
 
-<script src="js/app01.js"></script>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(function(){
     $('#header').load("header.html");
   }); 
+
 </script>
 
+<script src="js/app01.js"></script>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 
 </body>
 
