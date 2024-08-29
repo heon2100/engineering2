@@ -1,16 +1,20 @@
-var eqName = document.getElementById("eqName");
+let userID = document.getElementById("userID").innerHTML;
+
+let eqName = document.getElementById("eqName");
 let eqWeight = document.getElementById("eqWeight");
 let eqWidth = document.getElementById("eqWidth");
 let impact1 = document.getElementById("impact1");
 let impact2 = document.getElementById("impact2");
 let resultArea = document.getElementsByClassName("box2");
 let resultValue = document.getElementsByClassName("outPut");
-let cal =document.getElementsByClassName("calculate")
+let cal =document.getElementsByClassName("calculate");
 
 var modalContent = document.querySelector(".modal-content");
 var modalText = document.querySelector("#modalText");
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
+
+
 
 
 const excavator =[
@@ -19,6 +23,30 @@ const excavator =[
   {eqName: 'B/H06 DX140', eqWeight: 140, axDis: 2650, eqWidth: 2090, eqLength: 2800, eqContact: 500},
   {eqName: 'B/H08 DX240', eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
 ];
+
+
+// select 요소 참조 자동입력 기능
+function handleChange() {
+  // value 값 가져오기
+  const a = document.getElementById('eQ').value;
+
+  // Input 값 자동입력
+  document.getElementById('eqName').value = excavator[a].eqName;
+  document.getElementById('eqWeight').value = excavator[a].eqWeight;
+  document.getElementById('axDis').value = excavator[a].axDis;
+  document.getElementById('eqWidth').value = excavator[a].eqWidth;
+  document.getElementById('eqLength').value = excavator[a].eqLength;
+  document.getElementById('eqContact').value = excavator[a].eqContact;
+
+  // 장비선택 상태를 콘솔에 표시
+  if (a==0) {
+    console.log(`선택된 장비는 직접 입력하셔야 합니다`);
+  } else {
+    console.log(`선택된 장비는 ${excavator[a].eqName} 입니다.`);
+  }
+}
+
+
 
 
 
@@ -53,38 +81,43 @@ window.onclick = function(event) {
 
 // This is MAIN calculating function  ----------------------
 function calCulate(){
-  let input =  [eqName.value, eqWeight.value, axDis.value, eqWidth.value, eqLength.value, eqContact.value, db_Height.value, db_Density.value, db_Porosity.value, thk1.value, thk2.value, thk3.value, thk4.value];
-  let out = ['out_eqName','out_eqWeight', 'out_axDis', 'out_eqWidth', 'out_eqLength', 'out_eqContact', 'impact', 'out_db_Height','out_db_Density','out_db_Porosity','out_thk1','out_thk2','out_thk3','out_thk4'];
+  let input =  [eqName.value, eqWeight.value, axDis.value, eqWidth.value, eqLength.value, eqContact.value, db_Height.value, db_Density.value, db_Porosity.value, thk1.value, thk2.value, thk3.value, thk4.value, mortar.value];
+  let result_input = ['out_eqName','out_eqWeight', 'out_axDis', 'out_eqWidth', 'out_eqLength', 'out_eqContact', 'impact', 'out_db_Height','out_db_Density','out_db_Porosity','out_thk1','out_thk2','out_thk3','out_thk4','out_mortar'];
+ 
   if(impact1.checked){
-    input.splice(6,0, 1.3);
+    input.splice(6,0, 1.3);  //충격계수 1.3
   }else if(impact2.checked){
-    input.splice(6,0, 1.4);;
+    input.splice(6,0, 1.4);  //충격계수 1.4 
   }
 
 
 
   // 여기가 테이블에 입력값 넣는 거임.
   for (let i=0; i<input.length; i++) {
-    document.getElementById(out[i]).textContent = input[i];
+    document.getElementById(result_input[i]).textContent = input[i];
   }
+
   // 식 값 넣기.. 같은 숫자는 계속 넣는 방법 없나.. 
   document.getElementById('eqWeight_1').textContent = input[1];
   document.getElementById('impact_1').textContent = input[6];
   document.getElementById('axDis_1').textContent = input[2];
   document.getElementById('eqWidth_1').textContent = input[3];
-  document.getElementById('wEW').textContent = ((input[1]*input[6])/(input[2]*input[3])*1000000).toFixed(1);
+  wEW = ((input[1]*input[6])/(input[2]*input[3])*1000000).toFixed(1);
+  document.getElementById('wEW').textContent = wEW;
 
   document.getElementById('eqWeight_2').textContent = input[1];
   document.getElementById('impact_2').textContent = input[6];
   document.getElementById('eqContact_2').textContent = input[5];
   document.getElementById('axDis_2').textContent = input[2];
-  document.getElementById('wEI').textContent = ((input[1]*input[6])/(2*input[2]*input[5])*1000000).toFixed(1);
+  wEI = ((input[1]*input[6])/(2*input[2]*input[5])*1000000).toFixed(1);
+  document.getElementById('wEI').textContent = wEI;
 
   document.getElementById('eqContact_3').textContent = input[5];
   document.getElementById('axDis_3').textContent = input[2];
   document.getElementById('eqWidth_3').textContent = input[3];
   document.getElementById('axDis_4').textContent = input[2];
-  document.getElementById('eq_C_3').textContent = ((2*input[5]*input[2])/(input[3]*input[2])).toFixed(2);
+  conTact = ((2*input[5]*input[2])/(input[3]*input[2])).toFixed(2);
+  document.getElementById('eq_C_3').textContent = conTact;
 
   document.getElementById('dis1').textContent = input[3];
   document.getElementById('dis2').textContent = input[2];
@@ -95,13 +128,32 @@ function calCulate(){
 
   // 계산한 값들 넣기
 
-  let ws = input[7]*input[8]*input[9];
-  document.getElementById('ws').textContent = ws.toFixed(2);
+  let wS = (input[7]*input[8]*input[9]).toFixed(2);
+  document.getElementById('wS').textContent = wS;
+
+  let wD1 = (input[10+0]*24/1000).toFixed(2);
+  document.getElementById(`wD${0+1}`).textContent = wD1;
+  let wD2 = (input[10+1]*24/1000).toFixed(2);
+  document.getElementById(`wD${1+1}`).textContent = wD2;
+  let wD3 = (input[10+2]*24/1000).toFixed(2);
+  document.getElementById(`wD${2+1}`).textContent = wD3;
+  let wD4 = (input[10+3]*24/1000).toFixed(2);
+  document.getElementById(`wD${3+1}`).textContent = wD4;
+
+  // for (let i=0; i<4; i++) {
+  // document.getElementById(`wD${i+1}`).textContent = (input[10+i]*24/1000).toFixed(2);;
+  // }
+
+  let wF = (input[10+4]*20/1000).toFixed(1);
+  document.getElementById(`wF`).textContent = wF;
 
 
-  for (let i=0; i<4; i++) {
-    document.getElementById(`wd${i+1}`).textContent = input[10+i]*24/1000;
-  }
+  // data 모으기
+  let laBel = ['Equipment_Name','Weight', 'Axis_Distance', 'Width', 'Length', 'Contact', 'Impact', 'Debris_Height','Debris_Density','Debris_Porosity','Slab_Thk1','Slab_Thk2','Slab_Thk3','Slab_Thk4','Mortar_Thk', 
+                'wEW', 'wEI', 'conTact', 'wS', 'wD1', 'wD2', 'wD3', 'wD4', 'wF', 'userID'];
+  let dataValue = input.concat(wEW, wEI, conTact, wS, wD1, wD2, wD3, wD4, wF, userID);
+
+  collectdata(laBel, dataValue);
 
 
   // 결과값 보이기
@@ -109,8 +161,8 @@ function calCulate(){
     const div = resultArea[i];
     div.style.opacity="1";
   }
-  // data 모으기
-  collectdata();
+
+
 }
 
 
@@ -213,42 +265,9 @@ document.addEventListener("click", closeAllSelect);
 //-------- Equipment Info ---------------------------------------
 
 
-//------------ Choose Equipment Auto fill info -------------
-function handleOnChange(e) {
-  // // 선택된 데이터 가져오기
-  // const equip = e.value;
-  console.log(e.value);
-  // // 데이터 출력
-  // document.getElementById('eqName').value
-  //   = excavator[equip].eqName;
-
-}
 
 
 
-
-
-// select 요소 참조 자동입력 기능
-function handleChange() {
-  // value 값 가져오기
-  const a = document.getElementById('eQ').value;
-  // Input 값 자동입력
-  document.getElementById('eqName').value = excavator[a].eqName;
-  document.getElementById('eqWeight').value = excavator[a].eqWeight;
-  document.getElementById('axDis').value = excavator[a].axDis;
-  document.getElementById('eqWidth').value = excavator[a].eqWidth;
-  document.getElementById('eqLength').value = excavator[a].eqLength;
-  document.getElementById('eqContact').value = excavator[a].eqContact;
-
-
-
-  // 장비선택 상태를 콘솔에 표시
-  if (a==0) {
-    console.log(`선택된 장비는 직접 입력하셔야 합니다`);
-  } else {
-    console.log(`선택된 장비는 ${excavator[a].eqName} 입니다.`);
-  }
-}
 
 function inputWindow() {
   const a = document.getElementById('eQ').value;
@@ -259,6 +278,8 @@ function inputWindow() {
       b.classList.remove('expand');
     }
 }
+
+
 
 
 //===================테이블 이미지 저장하기 ============================
@@ -281,20 +302,26 @@ function downloadImage() {
 
 
 
-// 엑셀로 저장하는 파일
+
+
+// 엑셀로 저장하는 파일 ================================================
 
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbx_SrCzUn5i7-JwvdOFJBE20_B2leQu4_UXK0uppSSPLHRIFax6l72jBrXANBYf8Cd0/exec'
 
 // Collect the form data
 
-var keyValuePairs = [ "email=abc@lotte.net", "name=park","gender=male"];
-var formDataString = keyValuePairs.join("&");
+function collectdata(laBel, dataValue) {
+  let keyValuePairs = [];
+  for (let i=0; i<laBel.length; i++) {
+    keyValuePairs.push(laBel[i] + "=" + dataValue[i]);
+  }
 
-function collectdata() {
+  let DataString = keyValuePairs.join("&");
 
-  fetch(scriptURL, { method: 'POST', body: formDataString})
-  .then(response => alert("Thank you! your form is submitted successfully." ))
-  .then(() => { window.location.reload(); })
+  fetch(scriptURL, { method: 'POST', body: DataString})
+  .then(response => {modal.style.display = "block";
+                      modalText.innerHTML = `DATA have been Collected!`;})
+  //.then(() => { window.location.reload(); })
   .catch(error => console.error('Error!', error.message))
 }
