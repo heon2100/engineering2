@@ -353,7 +353,8 @@ a {
   }
 
   .dropdown__menu, 
-  .dropdown__submenu {
+  .dropdown__submenu, 
+  .dropdown__usermenu {
     max-height: initial;
     overflow: initial;
     position: absolute;
@@ -363,10 +364,7 @@ a {
     pointer-events: none;
     transition: opacity .3s, top .3s;
   }
-  .dropdown__usermenu {
-    left: 0rem;
-    top: 4.5rem;
-  }
+  
 
   
 
