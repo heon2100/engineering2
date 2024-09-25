@@ -18,7 +18,7 @@ var span = document.getElementsByClassName("close")[0];
 
 
 const excavator =[
-  {eqName: 'excavator'  , eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
+  {eqName: 'excavator (08)'  , eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
   {eqName: 'B/H03 DX60' , eqWeight:  60, axDis: 1650, eqWidth: 1590, eqLength: 1500, eqContact: 400},
   {eqName: 'B/H06 DX140', eqWeight: 140, axDis: 2650, eqWidth: 2090, eqLength: 2800, eqContact: 500},
   {eqName: 'B/H08 DX240', eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
