@@ -18,10 +18,13 @@ var span = document.getElementsByClassName("close")[0];
 
 
 const excavator =[
-  {eqName: 'excavator (08)'  , eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
-  {eqName: 'B/H03 DX60' , eqWeight:  60, axDis: 1650, eqWidth: 1590, eqLength: 1500, eqContact: 400},
-  {eqName: 'B/H06 DX140', eqWeight: 140, axDis: 2650, eqWidth: 2090, eqLength: 2800, eqContact: 500},
-  {eqName: 'B/H08 DX240', eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
+  {eqName: 'excavator(B/H08)'  , eqWeight: 240, axDis: 3650, eqWidth: 2990, eqLength: 3260, eqContact: 600},
+  {eqName: 'HX65A(B/H02)' , eqWeight: 65, axDis: 2100, eqWidth: 1925, eqLength: 2910, eqContact: 315},
+  {eqName: 'HX85A(B/H03)', eqWeight: 85, axDis: 2280, eqWidth: 2300, eqLength: 2560, eqContact: 450},
+  {eqName: 'HX150A(B/H06)', eqWeight: 150, axDis: 3000, eqWidth: 2490, eqLength: 3110, eqContact: 500},
+  {eqName: 'HX235ACR(B/H08)', eqWeight: 250, axDis: 3640, eqWidth: 2990, eqLength: 3130, eqContact: 600},
+  {eqName: 'HX220A(B/H10)', eqWeight: 220, axDis: 3640, eqWidth: 2990, eqLength: 3200, eqContact: 600},
+  {eqName: 'HX350A(B/H10)', eqWeight: 350, axDis: 4030, eqWidth: 3200, eqLength: 3680, eqContact: 600}
 ];
 
 
